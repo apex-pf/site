@@ -108,9 +108,13 @@
 
 .subtle{ color:#5B6B7A; margin:-4px 0 12px; }
 
-/* Grille Secteurs auto-adaptative (gère 2→5 colonnes) */
+/* Grille Secteurs auto-adaptative */
 .grid.sectors{grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));}
-
+@media (min-width: 1000px){
+  .grid.sectors{ grid-template-columns: repeat(3, 1fr); }
+  .grid.sectors .sector-card:nth-child(4){ grid-column: 1; } /* Environnement */
+  .grid.sectors .sector-card:nth-child(5){ grid-column: 2; } /* Sanitaire (accollé) */
+}
 /* Cartes Secteurs avec image top */
 .sector-card{ padding:0; overflow:hidden }              /* supprime padding général de la card */
 .sector-card h3{ padding:14px 16px 0; margin:0; }       /* remet du padding pour le titre */
