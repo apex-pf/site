@@ -106,18 +106,20 @@
     ul.clean li{padding:6px 0;color:var(--muted)}
     .band{background:linear-gradient(180deg, var(--brand-100) 0%, #FFFFFF 100%);border-top:1px solid #EAF0FF;border-bottom:1px solid #EAF0FF}
 
-    /* Sous-texte discret */
-.subtle{ color:#5B6B7A; margin: -4px 0 12px; }
-    /* Badges de secteurs */
-.chips{ display:flex; gap:10px; flex-wrap:wrap; }
-.chip{
-  display:inline-block;
-  padding:8px 12px;
-  border-radius:999px;
-  background:#fff;
-  border:1px solid #EAF0FF;
-  color:#0F172A;
-  font-weight:600;
+.subtle{ color:#5B6B7A; margin:-4px 0 12px; }
+
+/* Grille Secteurs auto-adaptative (gère 2→5 colonnes) */
+.grid.sectors{grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));}
+
+/* Cartes Secteurs avec image top */
+.sector-card{ padding:0; overflow:hidden }              /* supprime padding général de la card */
+.sector-card h3{ padding:14px 16px 0; margin:0; }       /* remet du padding pour le titre */
+.sector-card ul.clean{ padding:0 16px 14px; margin-top:6px; }
+.sector-img{
+  display:block; width:100%;
+  height:140px; object-fit:cover;
+  border-top-left-radius:16px; border-top-right-radius:16px;
+  background:linear-gradient(135deg,#EEF0FF,#fff);      /* fallback si image absente */
 }
     
 .chip::before{ content:"• "; color:var(--brand); }
@@ -162,7 +164,7 @@
           <a class="btn ghost" href="tel:+68987369491">📞 +689 87&nbsp;36&nbsp;94&nbsp;91</a>
         </div>
         <div class="pill" aria-label="Mots clés">
-          <span>Échantillonnage</span><span>Mesures <em>in&nbsp;situ</em></span><span>Traitement & analyse d'échantillons</span><span>Statistiques</span><span>Bioinformatique</span>
+          <span>Échantillonnage &amp; mesures <em>in&nbsp;situ</em></span><span>Traitement & analyse d'échantillons</span><span>Statistiques</span><span>Bioinformatique</span>
           <span>Visualisation & modélisation de données</span><span>Cartographie</span><span>Protocoles opérationnels</span><span>Rapports techniques</span><span>Articles scientifiques</span>
         </div>
       </div>
@@ -201,18 +203,67 @@
     </div>
   </section>
 
-  <section class="band" id="secteurs">
-  <div class="container">
-    <h2>Secteurs</h2>
-    <p class="subtle">Domaines d’intervention prioritaires — projets transversaux bienvenus.</p>
-    <div class="chips">
-      <span class="chip">Agriculture</span>
-      <span class="chip">Aquaculture</span>
-      <span class="chip">Pêche</span>
-      <span class="chip">Environnement</span>
-    </div>
+ <section class="container" id="secteurs">
+  <h2>Secteurs</h2>
+  <p class="subtle">Domaines d’intervention prioritaires (non exhaustif)</p>
+
+  <div class="grid sectors">
+    <!-- Agriculture -->
+    <article class="card sector-card">
+      <img class="sector-img" src="assets/secteurs/agriculture.jpg" alt="Agriculture — exploitation, sols, eau">
+      <h3>Agriculture</h3>
+      <ul class="clean">
+        <li>Études &amp; diagnostics agro-environnement</li>
+        <li>Qualité de l’eau &amp; indicateurs</li>
+        <li>Cartographie parcellaire (SIG)</li>
+      </ul>
+    </article>
+
+    <!-- Aquaculture -->
+    <article class="card sector-card">
+      <img class="sector-img" src="assets/secteurs/aquaculture.jpg" alt="Aquaculture — élevages marins & eau douce">
+      <h3>Aquaculture</h3>
+      <ul class="clean">
+        <li>Optimisation des systèmes &amp; Protocoles opérationnels standardisés</li>
+        <li>Suivi sanitaire &amp; Contrôle qualité</li>
+        <li>Protocoles d’échantillonnage</li>
+      </ul>
+    </article>
+
+    <!-- Pêche -->
+    <article class="card sector-card">
+      <img class="sector-img" src="assets/secteurs/peche.jpg" alt="Pêche — ressources & gestion">
+      <h3>Pêche</h3>
+      <ul class="clean">
+        <li>Indicateurs</li>
+        <li>Modélisation des stocks</li>
+        <li>Appui à la décision</li>
+      </ul>
+    </article>
+
+    <!-- Environnement -->
+    <article class="card sector-card">
+      <img class="sector-img" src="assets/secteurs/environnement.jpg" alt="Environnement — milieux & risques">
+      <h3>Environnement</h3>
+      <ul class="clean">
+        <li>Écotoxicologie - Suivi de cotaminants ((micro-)plastiques, polluants organiques persistants (POPs), métaux)</li>
+        <li>Zonages &amp; cartes d’enjeux (SIG)</li>
+        <li>Évaluation des risques</li>
+      </ul>
+    </article>
   </div>
 </section>
+  
+  <!-- Sanitaire -->
+<article class="card sector-card">
+  <img class="sector-img" src="assets/secteurs/sanitaire.jpg" alt="Sanitaire — qualité de l’eau, biosécurité, reporting">
+  <h3>Sanitaire</h3>
+  <ul class="clean">
+    <li>Suivi sanitaire &amp; biosécurité (plans d’échantillonnage)</li>
+    <li>Qualité de l’eau (indicateurs, seuils, SOP)</li>
+    <li>HACCP/QA, traçabilité &amp; reporting</li>
+  </ul>
+</article>
 
   <section class="band" id="rd">
     <div class="container">
