@@ -41,7 +41,12 @@
     .brand-link{display:flex;align-items:center;gap:10px;text-decoration:none}
     .brand-logo{height:40px;width:auto;display:block}
     @media (min-width: 900px){ .brand-logo{height:44px} }
-    .brand-text{font-weight:800;letter-spacing:.5px;color:var(--brand)} /* lisible sur fond blanc à gauche */
+    .brand-text{
+  font-size: clamp(18px, 2.4vw, 26px); /* ← augmente ici si tu veux encore plus grand */
+  font-weight: 800;
+  letter-spacing: .5px;
+  color: var(--brand);
+  line-height: 1;} /* lisible sur fond blanc à gauche */
 
     /* Navigation */
     nav[aria-label="Navigation principale"] a{color:#fff}
