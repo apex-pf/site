@@ -34,9 +34,17 @@
     }
 
     .nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:18px 0}
-    .brand{display:flex;align-items:center;gap:10px}
-    .brand .mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--brand),#FFFFFF);box-shadow:0 8px 18px rgba(0,0,0,.18)}
-    .brand span{font-weight:800;letter-spacing:.5px;color:var(--brand)} /* visible sur fond blanc à gauche */
+
+    /* Barre de marque : logo + texte */
+    .brand{display:flex;align-items:center}
+    .brand .mark{display:none} /* on masque l'ancien carré si présent */
+    .brand-link{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .brand-logo{height:40px;width:auto;display:block}
+    @media (min-width: 900px){ .brand-logo{height:44px} }
+    .brand-text{font-weight:800;letter-spacing:.5px;color:var(--brand)} /* lisible sur fond blanc à gauche */
+
+    /* Navigation */
+    nav[aria-label="Navigation principale"] a{color:#fff}
 
     /* HERO en 2 colonnes : logo à gauche (zone claire), texte blanc à droite (zone bleue) */
     .hero{padding:34px 0 60px}
@@ -83,17 +91,18 @@
     footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
   </style>
 </head>
-<body>
+<body id="top">
 <header>
   <div class="container nav">
     <div class="brand" aria-label="APEX">
-      <!-- Tu peux remplacer ce marqueur par un petit logo si tu veux -->
-      <div class="mark" aria-hidden="true"></div>
-      <span>APEX</span>
+      <a href="#top" class="brand-link" aria-label="Accueil APEX">
+        <img src="logo(2).png" alt="APEX — Expertise scientifique & technique" class="brand-logo">
+        <span class="brand-text">APEX</span>
+      </a>
     </div>
     <nav aria-label="Navigation principale" style="display:flex;gap:16px">
-      <a href="#services" style="color:#fff">Services</a>
-      <a href="#contact" style="color:#fff">Contact</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 
@@ -101,7 +110,7 @@
     <div class="hero-grid">
       <!-- Colonne gauche : logo très visible sur fond blanc -->
       <div class="hero-logo-card">
-        <!-- Remplace 'logo.png' par le nom réel de ton fichier dans le dépôt -->
+        <!-- Remplace 'logo.png' par le nom réel de ton fichier dans le dépôt si besoin -->
         <img class="hero-logo" src="logo.png" alt="APEX — Expertise scientifique & technique">
       </div>
 
