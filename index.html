@@ -105,6 +105,22 @@
     ul.clean{list-style:none;padding:0;margin:10px 0 0}
     ul.clean li{padding:6px 0;color:var(--muted)}
     .band{background:linear-gradient(180deg, var(--brand-100) 0%, #FFFFFF 100%);border-top:1px solid #EAF0FF;border-bottom:1px solid #EAF0FF}
+
+    /* Sous-texte discret */
+.subtle{ color:#5B6B7A; margin: -4px 0 12px; }
+    /* Badges de secteurs */
+.chips{ display:flex; gap:10px; flex-wrap:wrap; }
+.chip{
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid #EAF0FF;
+  color:#0F172A;
+  font-weight:600;
+}
+    
+.chip::before{ content:"• "; color:var(--brand); }
     .contact{display:grid;gap:18px;align-items:center}
     @media(min-width:860px){.contact{grid-template-columns:1.2fr .8fr}}
     .box{background:#fff;border:1px solid #E8EEF5;border-radius:16px;padding:18px}
@@ -137,7 +153,7 @@
       <!-- Colonne droite : texte blanc sur fond bleu -->
       <div>
         <h1>Cabinet d’Expertise Scientifique &amp; Technique</h1>
-        <p class="kicker">Polynésie française  ———————————————————————</p>
+        <p class="kicker">Polynésie française  ——————————————————————————</p>
         <p class="lead">
           Études &amp; diagnostics • R&amp;D • Analyses de données • Livrables opérationnels • Valorisation scientifique.
         </p>
@@ -146,8 +162,8 @@
           <a class="btn ghost" href="tel:+68987369491">📞 +689 87&nbsp;36&nbsp;94&nbsp;91</a>
         </div>
         <div class="pill" aria-label="Mots clés">
-          <span>Échantillonnage</span><span>Mesures <em>in&nbsp;situ</em></span></span><span>Statistiques</span><span>Bioinformatique</span><span>Visualisation & modélisation de données</span>
-          <span>Cartographie</span><span>Rédaction d'articles</span><span>Rapports techniques</span><span>Protocoles opérationnels</span>
+          <span>Échantillonnage</span><span>Mesures <em>in&nbsp;situ</em></span><span>Traitement & analyse d'échantillons</span><span>Statistiques</span><span>Bioinformatique</span>
+          <span>Visualisation & modélisation de données</span><span>Cartographie</span><span>Protocoles opérationnels</span><span>Rapports techniques</span><span>Articles scientifiques</span>
         </div>
       </div>
     </div>
@@ -184,6 +200,19 @@
       </article>
     </div>
   </section>
+
+  <section class="band" id="secteurs">
+  <div class="container">
+    <h2>Secteurs</h2>
+    <p class="subtle">Domaines d’intervention prioritaires — projets transversaux bienvenus.</p>
+    <div class="chips">
+      <span class="chip">Agriculture</span>
+      <span class="chip">Aquaculture</span>
+      <span class="chip">Pêche</span>
+      <span class="chip">Environnement</span>
+    </div>
+  </div>
+</section>
 
   <section class="band" id="rd">
     <div class="container">
