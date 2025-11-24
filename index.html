@@ -116,6 +116,15 @@
     .about-facts .spec{ color:#334155; font-size:14px; margin-top:6px; }
     .about-facts .sep{border-top:1px solid #E8EEF5; margin:10px 0;}
     .about-facts .kv strong{ color:#0F172A; }
+    
+    /* Sous-titre de section dans #about */
+    .about-sub{margin: 14px 0 8px;font-size: 18px;font-weight: 800;color: var(--brand);}
+    /* Liste de publications */
+    .pub-list{list-style: none;padding: 0;margin: 0 0 14px;}
+    .pub-list li{padding: 6px 0 6px 0;color: #334155;line-height: 1.45;}
+    .pub-list .pub-year{display: inline-block;min-width: 48px;font-weight: 700;color: var(--brand);}
+    .pub-list .pub-venue{color: #64748b;}
+    .pub-list a{color: var(--brand);text-decoration: underline;}
 
     section{padding:56px 0}
     #services{ padding-top: 60px; }
@@ -305,8 +314,19 @@
     <div>
       <p><strong>APEX</strong> est un cabinet d’expertise scientifique & technique basé en Polynésie française, dédié à la transformation de la mesure en décisions opérationnelles. Il fait dialoguer science et terrain pour aider les acteurs publics et privés à produire mieux, fiabiliser les procédés et répondre aux enjeux environnementaux.</p>
       <p>Piloté par le Dr Tony Gardon, APEX s’appuie sur plus de dix ans de projets en recherche scientifique et R&D appliquée, un ancrage local fort et un réseau opérationnel multi-acteurs.</p>
-
-      <ul class="about-bullets">
+      
+      <!-- Publications scientifiques -->
+      <h3 class="about-sub">Publications scientifiques</h3>
+      <ul class="pub-list">
+        <!-- Exemples de format à remplacer par tes vraies refs -->
+        <li>
+          <span class="pub-year">2025</span>
+          <strong>Gardon T.<strong>, Dromard, C.R., Gaertner, J.-C., Gaertner-Mazouni, N., <em>Vulnerability of Coral Reefs to Contaminants of Emerging Concern</em> in: The Future of Coral Reefs, Coral Reefs of the World. — <span class="pub-venue">Springer Nature</span>.
+          <a href="https://doi.org/10.1007/978-3-031-98584-3_6" target="_blank" rel="noopener"></a>
+        </li>
+        <li>
+          
+          <ul class="about-bullets">
         <li>Chaîne complète : terrain → analyses → livrables → déploiement</li>
         <li>Méthodes standardisées (SOP, QA/QC) & traçabilité des données</li>
         <li>Interventions multi-îles & à distance, délais maîtrisés</li>
