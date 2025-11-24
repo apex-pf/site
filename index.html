@@ -108,6 +108,9 @@
     .about-bullets{list-style:none; padding:0; margin:16px 0 0;}
     .about-bullets li{position:relative; padding:6px 0 6px 22px; color:var(--muted);}
     .about-bullets li::before{content:""; position:absolute; left:0; top:11px;width:8px; height:8px; border-radius:999px; background:var(--brand);box-shadow:0 0 0 3px rgba(41,0,229,.08);}
+    .pub-list .pub-year{display:inline-block; min-width:48px;font-weight:800; color:var(--brand);}
+    .pub-list .pub-venue{ color:#64748b; }
+    .pub-list a{ color:var(--brand); text-decoration:underline; }
     .about-card{background:#fff; border:1px solid #E8EEF5; border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.06); overflow:hidden;max-width: 340px; justify-self: end;}
     .about-img{display:block; width:100%;height:auto;aspect-ratio: 3 / 4; object-fit: cover;object-position: 50% 20%; background:linear-gradient(135deg,#EEF0FF,#fff);}
     .about-facts{padding:14px 16px; display:grid; gap:8px; font-size:14px; color:#334155;}
@@ -119,12 +122,6 @@
     
     /* Sous-titre de section dans #about */
     .about-sub{margin: 14px 0 8px;font-size: 18px;color: var(--brand);}
-    /* Liste de publications */
-    .pub-list{list-style: none;padding: 0;margin: 0 0 14px;}
-    .pub-list li{padding: 6px 0 6px 0;color: #334155;line-height: 1.45;}
-    .pub-list .pub-year{display: inline-block;min-width: 48px;color: var(--brand);}
-    .pub-list .pub-venue{color: #64748b;}
-    .pub-list a{color: var(--brand);text-decoration: underline;}
 
     section{padding:56px 0}
     #services{ padding-top: 60px; }
@@ -317,14 +314,72 @@
       
       <!-- Publications scientifiques -->
       <h3 class="about-sub">Publications scientifiques</h3>
-      <ul class="pub-list">
-        <!-- Exemples de format à remplacer par tes vraies refs -->
-        <li>
-          <span class="pub-year">2025</span>
-          Gardon T., Dromard, C.R., Gaertner, J.-C., Gaertner-Mazouni, N., <em>Vulnerability of Coral Reefs to Contaminants of Emerging Concern</em> in: The Future of Coral Reefs, Coral Reefs of the World. — <span class="pub-venue">Springer Nature</span>.
-          <a href="https://doi.org/10.1007/978-3-031-98584-3_6" target="_blank" rel="noopener"></a>
-        </li>
-        <li>
+<ul class="about-bullets pub-list">
+  <li>
+    <span class="pub-year">2025</span>
+    Gardon T., Dromard C.R., Gaertner J.-C., Gaertner-Mazouni N.
+    <em>Vulnerability of Coral Reefs to Contaminants of Emerging Concern</em>.
+    In: <span class="pub-venue">The Future of Coral Reefs, Coral Reefs of the World</span>.
+    Springer Nature, p. 268.
+    <a href="https://doi.org/10.1007/978-3-031-98584-3_6" target="_blank" rel="noopener">DOI</a>
+  </li>
+
+  <li>
+    <span class="pub-year">2024</span>
+    Crusot M., Gardon T., Richmond T., Jezequel R., Barbier E., Gaertner-Mazouni N.
+    <em>Chemical toxicity of synthetic and natural-based spat collector on the embryo-larval development of the pearl oyster Pinctada margaritifera</em>.
+    <span class="pub-venue">Journal of Hazardous Materials</span> 479:135647.
+    <a href="https://doi.org/10.1016/j.jhazmat.2024.135647" target="_blank" rel="noopener">DOI</a>
+  </li>
+
+  <li>
+    <span class="pub-year">2024</span>
+    Gardon T., Le Luyer J., Le Moullac G., Soyez C., Lagarde F., Dehaut A., Paul-Pont I., Huvet A.
+    <em>Pearl Farming Micro-Nanoplastics Affect Oyster Physiology and Pearl Quality</em>.
+    <span class="pub-venue">Environmental Science &amp; Technology</span> 58:207–218.
+    <a href="https://doi.org/10.1021/acs.est.3c06684" target="_blank" rel="noopener">DOI</a>
+  </li>
+
+  <li>
+    <span class="pub-year">2022</span>
+    Gardon T., Paul-Pont I., Le Moullac G., Soyez C., Lagarde F., Huvet A.
+    <em>Cryogrinding and sieving techniques as challenges towards producing controlled size range microplastics for relevant ecotoxicological tests</em>.
+    <span class="pub-venue">Environmental Pollution</span> 315:120383.
+    <a href="https://doi.org/10.1016/j.envpol.2022.120383" target="_blank" rel="noopener">DOI</a>
+  </li>
+
+  <li>
+    <span class="pub-year">2021</span>
+    Gardon T., El Rakwe M., Paul-Pont I., Le Luyer J., Thomas L., Prado E., Kada B., Cassone A-L., Quillien V., Soyez C., Costes L., Crusot M., Dreanno C., Le Moullac G., Huvet A.
+    <em>Microplastics contamination in pearl-farming lagoons of French Polynesia</em>.
+    <span class="pub-venue">Journal of Hazardous Materials</span> 419:126396.
+    <a href="https://doi.org/10.1016/j.jhazmat.2021.126396" target="_blank" rel="noopener">DOI</a>
+  </li>
+
+  <li>
+    <span class="pub-year">2020</span>
+    Gardon T., Morvan L., Huvet A., Quillien V., Soyez C., Le Moullac G., Le Luyer J.
+    <em>Microplastics induce dose-specific transcriptomic disruptions in energy metabolism and immunity of the pearl oyster Pinctada margaritifera</em>.
+    <span class="pub-venue">Environmental Pollution</span> 266:115180.
+    <a href="https://doi.org/10.1016/j.envpol.2020.115180" target="_blank" rel="noopener">DOI</a>
+  </li>
+
+  <li>
+    <span class="pub-year">2020</span>
+    Gardon T., Huvet A., Paul-Pont I., Cassone A-L., Sham Koua M., Soyez C., Jezequel R., Receveur J., Le Moullac G.
+    <em>Toxic effects of leachates from plastic pearl-farming gear on embryo-larval development in the pearl oyster Pinctada margaritifera</em>.
+    <span class="pub-venue">Water Research</span> 179:115890.
+    <a href="https://doi.org/10.1016/j.watres.2020.115890" target="_blank" rel="noopener">DOI</a>
+  </li>
+
+  <li>
+    <span class="pub-year">2018</span>
+    Gardon T., Reisser C., Soyez C., Quillien V., Le Moullac G.
+    <em>Microplastics Affect Energy Balance and Gametogenesis in the Pearl Oyster Pinctada margaritifera</em>.
+    <span class="pub-venue">Environmental Science &amp; Technology</span> 52:5277–5286.
+    <a href="https://doi.org/10.1021/acs.est.8b00168" target="_blank" rel="noopener">DOI</a>
+  </li>
+</ul>
           
           <ul class="about-bullets">
         <li>Chaîne complète : terrain → analyses → livrables → déploiement</li>
