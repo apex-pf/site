@@ -40,7 +40,8 @@
     }
 
     .nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:18px 0}
-
+    .icon {width: 20px;height: 20px;vertical-align: -3px;margin-right: 6px;}
+    
     /* Barre de marque : logo + texte */
     .brand{display:flex;align-items:center}
     .brand .mark{display:none} /* on masque l'ancien carré si présent */
@@ -218,7 +219,7 @@
     <h2>Services</h2>
     <div class="grid cols-3">
       <article class="card">
-        <h3>🔬 Prestations scientifiques</h3>
+        <h3><img src="microscope.png" alt="" class="icon"> Prestations scientifiques</h3>
         <ul class="clean">
           <li>Terrain : échantillonnage &amp; mesures <em>in&nbsp;situ</em>, déploiement de dispositifs de suivi</li>
           <li>Données : traitement/analyses (R, bioinfo), visualisation/modélisation &amp; interprétations</li>
