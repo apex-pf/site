@@ -9,7 +9,7 @@
   <!-- Thème sombre -->
   <link rel="icon" type="image/png" href="favicon-light.png" media="(prefers-color-scheme: dark)">
   <title>APEX | Expertises Scientifiques & Techniques</title>
-  <meta name="description" content="APEX : prestations scientifiques & techniques — études & diagnostics, R&D, analyses de données, livrables opérationnels, valorisation scientifique. Polynésie française.">
+  <meta name="description" content="APEX : prestations scientifiques & techniques — études & diagnostics, R&D, analyses de données, rapports opérationnels, valorisation scientifique. Polynésie française.">
   <meta name="theme-color" content="#2900E5">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -193,6 +193,16 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
   top: 0.42em;  /* parfaitement centré sur la première ligne */
 }
 
+    #services ul.clean li.note-ref::before {
+  display: none; /* supprime le bullet */
+}
+
+#services ul.clean li.note-ref {
+  padding-left: 0; 
+  margin-top: 10px;
+  font-style: italic;
+  color: var(--muted);
+}
   </style>
 
 <!-- Body -->
@@ -227,7 +237,7 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
         <h1>Cabinet d’Expertises Scientifiques &amp; Techniques</h1>
         <p class="kicker">——————————————————————————————————————————</p>
         <p class="lead">
-          Études &amp; diagnostics • R&amp;D • Analyses de données • Livrables opérationnels • Valorisation scientifique.
+          Études &amp; diagnostics • R&amp;D • Analyses de données • Rapports opérationnels • Valorisation scientifique
         </p>
         <div class="cta">
           <a class="btn primary" href="mailto:tgardon.apex@gmail.com"><img src="devis.png" alt="" class="icon"> Demander un devis</a>
@@ -264,12 +274,12 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
         </ul>
       </article>
       <article class="card">
-        <h3><img src="fish.png" alt="" class="icon"> Aménagements aquatiques</h3>
+        <h3><img src="fish.png" alt="" class="icon"> Aménagements aquatiques*</h3>
         <ul class="clean">
           <li>Installation &amp; maintenance de systèmes aquatiques (aquariums, paludariums)</li>
           <li>Design &amp; aménagement (aquascaping, décors aquatiques)</li>
           <li>Restauration de milieux naturels</li>
-          <li>Pour hôtels, restaurants &amp; particuliers</li>
+          <li class="note-ref">* Prestations disponibles pour hôtels, restaurants &amp; particuliers</li>
         </ul>
       </article>
     </div>
@@ -342,7 +352,7 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
   <h2>Présentation</h2>
   <div class="about-grid">
     <div>
-      <p><strong>APEX</strong> est un cabinet d’expertises scientifiques & techniques basé en Polynésie française. Il transforme les mesures en diagnostics fiables et les données en décisions opérationnelles. À l’interface entre science et terrain, APEX aide les acteurs publics et privés à mieux produire, fiabiliser les procédés, répondre aux enjeux environnementaux et diffuser la connaissance scientifique.</p>
+      <p><strong>APEX</strong> est un cabinet d’expertises scientifiques & techniques basé en Polynésie française et fondé en 2026. Il permet d'acquérir, d'exploiter et de transformer les mesures en diagnostics fiables et les données en décisions opérationnelles. À l’interface entre science et terrain, APEX accompagne les acteurs publics et privés à mieux produire, fiabiliser les procédés, répondre aux enjeux environnementaux et diffuser la connaissance scientifique.</p>
       <p>Piloté par le Dr. Tony Gardon, APEX s’appuie sur plus de dix ans de projets de recherche fondamentale, R&D appliqué, un ancrage local fort et un réseau opérationnel multi-acteurs.</p>
       
       <!-- Publications scientifiques -->
