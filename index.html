@@ -208,6 +208,43 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   padding-top: 8px; /* espace au-dessus de la note */
 }
+    /* Références */
+.ref-grid {
+  margin-top: 10px;
+}
+
+.ref-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.ref-card h3 {
+  padding: 14px 16px 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+.ref-card p {
+  padding: 6px 16px;
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.ref-card .ref-detail {
+  font-size: 13px;
+  color: #334155;
+  padding-bottom: 14px;
+}
+
+.ref-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  background: linear-gradient(135deg,#EEF0FF,#fff);
+}
   </style>
 
 <!-- Body -->
@@ -368,6 +405,79 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
     <div>
       <p><strong>APEX</strong> est un cabinet d’expertises scientifiques et techniques basé en Polynésie française, fondé en 2026. Il accompagne les acteurs publics et privés dans l’acquisition, l’analyse et la valorisation de données scientifiques afin de fiabiliser les diagnostics, éclairer l’action et optimiser les pratiques. À la croisée de la recherche scientifique et des réalités de terrain, le cabinet propose des solutions mesurables, robustes et directement mobilisables, de l’échantillonnage à l’aide à la décision. APEX se distingue par sa capacité à transformer rapidement des données complexes en éléments directement exploitables pour l’action publique et opérationnelle, avec un haut niveau d’exigence scientifique.</p>
       <p>Piloté par le Dr. Tony Gardon, APEX s’appuie sur plus de dix ans de projets de recherche fondamentale, R&D appliqué, un ancrage local fort et un réseau opérationnel multi-acteurs.</p>
+      
+  <!-- Références -->
+<h3 class="about-sub">Références</h3>
+
+<div class="grid cols-2 ref-grid">
+
+  <!-- MICROLAG -->
+  <article class="card ref-card">
+    <img class="ref-img" src="assets/references/microlag.jpg" alt="Projet MICROLAG — microplastiques lagon">
+    <h3>2017–2020 — Doctorat (MICROLAG)</h3>
+    <p>
+      Évaluation de la contamination en microplastiques dans les lagons perlicoles et de leurs impacts sur
+      <em>Pinctada margaritifera</em> et la qualité de la perle. Études multi-sites + expérimentations contrôlées.
+    </p>
+    <p class="ref-detail">
+      Résultats : impacts physiologiques, transfert vers la perle, développement de protocoles expérimentaux robustes,
+      contribution aux réflexions réglementaires sur les plastiques en perliculture.
+    </p>
+  </article>
+
+  <!-- PLASTICOR -->
+  <article class="card ref-card">
+    <img class="ref-img" src="assets/references/plasticor.jpg" alt="Projet PLASTICOR — microbiomes récifaux">
+    <h3>2021 — Post-doc (PLASTICOR)</h3>
+    <p>
+      Analyse des microbiomes récifaux le long d’un gradient d’anthropisation dans le lagon d’Ahe
+      via métabarcoding multi-compartiments (coraux, poissons, huîtres, ADNe).
+    </p>
+    <p class="ref-detail">
+      Résultats : signatures biologiques liées aux pressions anthropiques et variabilité saisonnière intégrée.
+    </p>
+  </article>
+
+  <!-- TIPTOP -->
+  <article class="card ref-card">
+    <img class="ref-img" src="assets/references/tiptop.jpg" alt="Projet TIPTOP — contamination thon">
+    <h3>2022 — Post-doc (TIPTOP)</h3>
+    <p>
+      Évaluation de la contamination micro/nanoplastique et chimique chez le thon jaune et la bonite
+      (PNG, Nouvelle-Calédonie).
+    </p>
+    <p class="ref-detail">
+      Résultats : mise en œuvre de chaînes analytiques complexes sur matrices biologiques et contaminants multiples.
+    </p>
+  </article>
+
+  <!-- CORAIL -->
+  <article class="card ref-card">
+    <img class="ref-img" src="assets/references/corail.jpg" alt="Ouvrage scientifique récifs coralliens">
+    <h3>2023 — Ouvrage scientifique</h3>
+    <p>
+      Contribution au LABEX CORAIL — chapitre sur la vulnérabilité des récifs coralliens
+      face aux contaminants émergents.
+    </p>
+    <p class="ref-detail">
+      Synthèse scientifique et transfert de connaissances vers la recherche et la gestion environnementale.
+    </p>
+  </article>
+
+  <!-- Enseignement -->
+  <article class="card ref-card">
+    <img class="ref-img" src="assets/references/teaching.jpg" alt="Enseignement et recherche UPF">
+    <h3>2023–2025 — Enseignant-chercheur</h3>
+    <p>
+      Enseignements L2–L3 : biochimie, écotoxicologie, écosystèmes marins, ressources naturelles,
+      stratégies d’échantillonnage.
+    </p>
+    <p class="ref-detail">
+      Recherche : structuration d’un réseau de surveillance des contaminants émergents dans le continuum terre–mer.
+    </p>
+  </article>
+
+</div>
       
       <!-- Publications scientifiques -->
       <h3 class="about-sub">Publications scientifiques</h3>
