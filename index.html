@@ -249,6 +249,30 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
 .ref-grid {
   grid-template-columns: 1fr !important;
 }
+
+    /* Logos références */
+.ref-logos {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 16px 14px;
+  flex-wrap: wrap;
+}
+
+.ref-logos img {
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  filter: grayscale(100%);
+  transition: all 0.2s ease;
+}
+
+.ref-logos img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+    
   </style>
 
 <!-- Body -->
@@ -493,6 +517,11 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
       écotoxicologie des microplastiques, ainsi qu’à la mise au point de protocoles expérimentaux robustes et innovants, repris par des équipes partenaires. Ils ont également contribué à la réflexion 
       institutionnelle sur l’usage des plastiques en perliculture, participant à l’émergence de mesures réglementaires et de projets visant à réduire l’empreinte environnementale du secteur.
     </p>
+    <div class="ref-logos">
+      <img src="assets/references/logos/ifremer.png" alt="IFREMER">
+      <img src="assets/references/logos/secopol.png" alt="SECOPOL">
+      <img src="assets/references/logos/drm.png" alt="DRM">
+    </div>
   </article>
 
 </div>
