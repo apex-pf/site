@@ -214,12 +214,17 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
 }
 
 .ref-card {
+  display: grid;
+  grid-template-columns: 180px 1fr; /* image gauche / texte droite */
   padding: 0;
   overflow: hidden;
+  align-items: stretch;
+  gap: 0;
 }
 
 .ref-card h3 {
   padding: 14px 16px 0;
+  padding-top: 12px;
   margin: 0;
   font-size: 16px;
 }
@@ -239,17 +244,25 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
 
 .ref-img {
   width: 100%;
-  height: 140px;
+  height: 100%;
   object-fit: cover;
   border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  background: linear-gradient(135deg,#EEF0FF,#fff);
+  border-bottom-left-radius: 16px;
+}
+
+.ref-card h3,
+.ref-card p,
+.ref-logos {
+  grid-column: 2;
 }
     /* Références en 1 colonne uniquement */
 .ref-grid {
   grid-template-columns: 1fr !important;
 }
-
+.ref-img {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+}
     /* Logos références */
 .ref-logos {
   display: flex;
@@ -271,7 +284,24 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
   opacity: 1;
   filter: grayscale(0%);
 }
-    
+
+@media (max-width: 700px){  
+
+  .ref-card {  
+    grid-template-columns: 1fr;  
+  }  
+
+  .ref-img {  
+    height: 160px;  
+    border-radius: 16px 16px 0 0;  
+  }  
+
+  .ref-card h3,  
+  .ref-card p,  
+  .ref-logos {  
+    grid-column: 1;  
+  }  
+}
   </style>
 
 <!-- Body -->
