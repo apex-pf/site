@@ -223,17 +223,16 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
 
 /* Carte */
 .ref-card {
-  display: grid;
-  grid-template-columns: 240px 1fr;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   padding: 0;
-  align-items: stretch;
 }
-
+    
 /* Image */
 .ref-img {
   width: 100%;
-  height: 100%;
+  height: 180px;
   object-fit: cover;
 }
 
@@ -276,6 +275,17 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
   line-height: 1.5;
 }
 
+.ref-logos {
+  order: 1;
+}
+
+.ref-card h3 {
+  order: 2;
+}
+
+details {
+  order: 3;
+}
 /* DETAILS */
 details {
   padding-bottom: 10px;
