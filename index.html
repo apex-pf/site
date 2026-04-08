@@ -230,13 +230,22 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
   font-size: 16px;
 }
 
-.ref-card p {
-  padding: 6px 16px;
-  margin: 0;
-  font-size: 14px;
-  color: var(--muted);
-}
+.ref-card p {padding: 6px 16px; margin: 0; font-size: 14px; color: var(--muted); display: -webkit-box;
+             -webkit-line-clamp: 5; /* nombre de lignes visibles */
+             -webkit-box-orient: vertical;
+             overflow: hidden;
+            } var(--muted);
+    }
+    
+details p {display: block; -webkit-line-clamp: unset; }
 
+details summary {
+  cursor: pointer;
+  padding: 0 16px 12px;
+  font-size: 13px;
+  color: var(--brand);
+  font-weight: 600;
+}
 .ref-card .ref-detail {
   font-size: 13px;
   color: #334155;
@@ -507,11 +516,14 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
       <img src="assets/references/logos/secopol.png" alt="SECOPOL">
     </div>
     <h3>2023–2025 — Projet SCIESTA (UPF/UMR SECOPOL) — Dimensionnement d’un réseau de surveillance des contaminants d'intérêt émergent aux embouchures des rivières de Tahiti</h3>
+    <details>
+      <summary>Voir plus</summary>
     <p>
       Le projet SCIESTA visait le dimensionnement dʼun réseau de surveillance environnementale dédié aux contaminants d'intérêt émergent (microplastiques, métaux lourds et polluants organiques persistants, 
       incluant les pesticides) au niveau des zones d’embouchure du continuum terre–mer sur l’île de Tahiti, incluant leur évaluation dans les compartiments sédimentaires marins. Le projet 
       s’inscrivait dans une démarche de structuration méthodologique fondée sur l’analyse des pressions anthropiques, la représentativité environnementale des sites et la comparabilité spatiale des dispositifs de suivi.
     </p>
+    </details>
   </article>
 
     <!-- Enseignement -->
@@ -521,9 +533,12 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
       <img src="assets/references/logos/upf.png" alt="UPF">
     </div>
     <h3>2023–2025 (UPF) — Enseignements à l'Université de la Polynésie française auprès d’étudiants de L2 et L3 parcours Sciences et Vie</h3>
+    <details>
+    <summary>Voir plus</summary>
     <p>
       Unités d'enseignement dispensées : biochimie des macromolécules, écotoxicologie, écosystèmes marins, exploitation des ressources naturelles, gestion des écosystèmes, stratégies d’échantillonnage.
     </p>
+    </details>
   </article>
   
   <!-- CORAIL -->
@@ -585,6 +600,8 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
       <img src="assets/references/logos/drm.jpg" alt="DRM">
     </div>
     <h3>2017–2020 — Projet MICROLAG (IFREMER/UMR SECOPOL) — Évaluation de la contamination en microplastiques dans les lagons polynésiens et de leurs impacts sur l'huître perlière</h3>
+    <details>
+      <summary>Voir plus</summary>
     <p>
       Le projet MICROLAG, cofinancé par la Direction des Ressources Marines (DRM) et l’IFREMER, visait à caractériser pour la première fois la contamination en microplastiques dans les lagons perlicoles de 
       Polynésie française et à en évaluer les impacts biologiques et fonctionnels sur l’huître perlière (<em>Pinctada margaritifera</em>) et la qualité de la perle, dans un contexte d’accumulation historique 
@@ -596,6 +613,7 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
       écotoxicologie des microplastiques, ainsi qu’à la mise au point de protocoles expérimentaux robustes et innovants, repris par des équipes partenaires. Ils ont également contribué à la réflexion 
       institutionnelle sur l’usage des plastiques en perliculture, participant à l’émergence de mesures réglementaires et de projets visant à réduire l’empreinte environnementale du secteur.
     </p>
+    </details>
   </article>
 
     <!-- STAGE MASTER1 -->
