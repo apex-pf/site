@@ -223,81 +223,32 @@ footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
             } var(--muted);
     }
     
-details p {display: block; -webkit-line-clamp: unset; }
+details p { padding: 6px 16px 12px; font-size: 14px; color: var(--muted); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+details { margin-top: 4px; }
+details summary { cursor: pointer; font-size: 13px; color: var(--brand); font-weight: 600; padding: 0 16px; }
 
-details summary {
-  cursor: pointer;
-  padding: 0 16px 12px;
-  font-size: 13px;
-  color: var(--brand);
-  font-weight: 600;
-}
-.ref-card .ref-detail {
-  font-size: 13px;
-  color: #334155;
-  padding-bottom: 14px;
-}
-
-.ref-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-top-left-radius: 16px;
-  border-bottom-left-radius: 16px;
-}
-
+.ref-card .ref-detail { font-size: 13px; color: #334155; padding-bottom: 14px;}
+.ref-img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .ref-card h3,
 .ref-card p,
-.ref-logos {
-  grid-column: 2;
-}
-    /* Références en 1 colonne uniquement */
-.ref-grid {
-  grid-template-columns: 1fr !important;
-}
-.ref-img {
-  grid-column: 1;
-  grid-row: 1 / span 3;
-}
-    /* Logos références */
-.ref-logos {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  padding: 12px 16px 2px;
-  flex-wrap: wrap;
-}
+.ref-logos { grid-column: 2;}
+.ref-grid { grid-template-columns: 1fr !important; }
+.ref-img { grid-column: 1; grid-row: 1 / span 3; }
+.ref-logos { display: flex; gap: 12px; align-items: center; padding: 12px 16px 2px; flex-wrap: wrap; }
+.ref-logos img { height: 26px; width: auto; object-fit: contain; opacity: 0.9; transition: all 0.2s ease; }
+.ref-logos img:hover { opacity: 1; filter: grayscale(0%); }
 
-.ref-logos img {
-  height: 26px;
-  width: auto;
-  object-fit: contain;
-  opacity: 0.9;
-  transition: all 0.2s ease;
-}
-
-.ref-logos img:hover {
-  opacity: 1;
-  filter: grayscale(0%);
-}
-
-@media (max-width: 700px){  
-
-  .ref-card {  
-    grid-template-columns: 1fr;  
-  }  
-
-  .ref-img {  
-    height: 160px;  
-    border-radius: 16px 16px 0 0;  
-  }  
-
+@media (max-width: 700px){
+  .ref-card { grid-template-columns: 1fr; }  
+  .ref-img { height: 160px; border-radius: 16px 16px 0 0; }  
   .ref-card h3,  
   .ref-card p,  
-  .ref-logos {  
-    grid-column: 1;  
-  }  
+  .ref-logos {grid-column: 1; } 
 }
+
+.ref-content {display: flex; flex-direction: column; justify-content: flex-start; height: 100%; }
+  
+    
   </style>
 
 <!-- Body -->
@@ -501,6 +452,7 @@ details summary {
       <img src="assets/references/logos/upf.png" alt="UPF">
       <img src="assets/references/logos/secopol.png" alt="SECOPOL">
     </div>
+    <div class="ref-content">
     <h3>2023–2025 — Projet SCIESTA (UPF/UMR SECOPOL) — Dimensionnement d’un réseau de surveillance des contaminants d'intérêt émergent aux embouchures des rivières de Tahiti</h3>
     <details>
       <summary>Voir plus</summary>
@@ -510,6 +462,7 @@ details summary {
       s’inscrivait dans une démarche de structuration méthodologique fondée sur l’analyse des pressions anthropiques, la représentativité environnementale des sites et la comparabilité spatiale des dispositifs de suivi.
       </p>
     </details>
+    </div>
   </article>
 
     <!-- Enseignement -->
@@ -518,6 +471,7 @@ details summary {
     <div class="ref-logos">
       <img src="assets/references/logos/upf.png" alt="UPF">
     </div>
+    <div class="ref-content">
     <h3>2023–2025 (UPF) — Enseignements à l'Université de la Polynésie française auprès d’étudiants de L2 et L3 parcours Sciences et Vie</h3>
     <details>
     <summary>Voir plus</summary>
@@ -525,6 +479,7 @@ details summary {
       Unités d'enseignement dispensées : biochimie des macromolécules, écotoxicologie, écosystèmes marins, exploitation des ressources naturelles, gestion des écosystèmes, stratégies d’échantillonnage.
       </p>
     </details>
+    </div>
   </article>
   
   <!-- CORAIL -->
@@ -534,6 +489,7 @@ details summary {
       <img src="assets/references/logos/ephe.png" alt="EPHE">
       <img src="assets/references/logos/criobe.jpg" alt="CRIOBE">
     </div>
+    <div class="ref-content">
     <h3>2023 (EPHE/CRIOBE) — Contribution à un ouvrage scientifique</h3>
     <details>
       <summary>Voir plus</summary>
@@ -543,6 +499,7 @@ details summary {
       scientifique orientée vers les recherches futures et le transfert de connaissances au service des stratégies de gestion des écosystèmes coralliens.
       </p>
     </details>
+    </div>
   </article>
   
   <!-- TIPTOP -->
@@ -553,6 +510,7 @@ details summary {
       <img src="assets/references/logos/lemar.png" alt="LEMAR">
       <img src="assets/references/logos/cps.png" alt="CPS">
     </div>
+    <div class="ref-content">
     <h3>2022 — Projet TIPTOP (IRD/UMR LEMAR) — Évaluation de la contamination micro/nanoplastique et chimique chez le thon jaune et la bonite de l'Océan Pacifique Sud </h3>
     <details>
       <summary>Voir plus</summary>
@@ -564,6 +522,7 @@ details summary {
       exploitées. Le projet reposait sur la mise en œuvre de chaînes analytiques complexes appliquées à des matrices biologiques, intégrant des contraintes méthodologiques et analytiques élevées.
       </p>
     </details>
+    </div>
   </article>
   
   <!-- PLASTICOR -->
@@ -573,6 +532,7 @@ details summary {
       <img src="assets/references/logos/ephe.png" alt="EPHE">
       <img src="assets/references/logos/criobe.jpg" alt="CRIOBE">
     </div>
+    <div class="ref-content">
     <h3>2021 — Projet PLASTICOR (EPHE/CRIOBE) — Étude de la variabilité spatio-saisonnière du microbiome d'organismes récifaux le long d'un grandient d'anthropisation</h3>
     <details>
       <summary>Voir plus</summary>
@@ -584,6 +544,7 @@ details summary {
       dégradation spatio-saisonnière des microbiotes en zones de perliculture, associée à des signatures physico-chimiques de l'eau, indiquant un état écologique altéré et des taxons bioindicateurs potentiels.
       </p>
     </details>
+    </div>
   </article>
   
   <!-- MICROLAG -->
@@ -594,6 +555,7 @@ details summary {
       <img src="assets/references/logos/secopol.png" alt="SECOPOL">
       <img src="assets/references/logos/drm.jpg" alt="DRM">
     </div>
+    <div class="ref-content">
     <h3>2017–2020 — Projet MICROLAG (IFREMER/UMR SECOPOL) — Évaluation de la contamination en microplastiques dans les lagons polynésiens et de leurs impacts sur l'huître perlière</h3>
     <details>
       <summary>Voir plus</summary>
@@ -609,6 +571,7 @@ details summary {
       institutionnelle sur l’usage des plastiques en perliculture, participant à l’émergence de mesures réglementaires et de projets visant à réduire l’empreinte environnementale du secteur.
     </p>
     </details>
+    </div>
   </article>
 
     <!-- STAGE MASTER1 -->
@@ -618,6 +581,7 @@ details summary {
       <img src="assets/references/logos/ucn.png" alt="UCN">
       <img src="assets/references/logos/borea.png" alt="BOREA">
     </div>
+    <div class="ref-content">
     <h3>2016 (UCN/UMR BOREA) — Mise en place de la gonade au cours du développement de l’huître creuse</h3>
     <details>
       <summary>Voir plus</summary>
@@ -630,6 +594,7 @@ details summary {
       à l’amélioration des connaissances en biologie et en ostréiculture.
       </p>
     </details>
+    </div>
   </article>
 
        <!-- PROJET PRO -->
@@ -638,6 +603,7 @@ details summary {
     <div class="ref-logos">
       <img src="assets/references/logos/drm.jpg" alt="DRM">
     </div>
+    <div class="ref-content">
     <h3>2015 (DRM) — Projet pilote — Première ferme d'élevage de <em>Chanos chanos</em> en Polynésie française sur l'atoll de Rangiroa</h3>
     <details>
       <summary>Voir plus</summary>
@@ -650,6 +616,7 @@ details summary {
       Polynésie française.
       </p>
     </details>
+    </div>
   </article>
       
       <!-- STAGE LP -->
@@ -658,6 +625,7 @@ details summary {
     <div class="ref-logos">
       <img src="assets/references/logos/drm.jpg" alt="DRM">
     </div>
+    <div class="ref-content">
     <h3>2015 (DRM) — Géniteurs de Paraha peue : un levier clé pour l’optimisation de la pisciculture polynésienne — Analyse des performances de ponte et optimisation de l’incubation des œufs</h3>
     <details>
       <summary>Voir plus</summary>
@@ -671,6 +639,7 @@ details summary {
       proposer des solutions opérationnelles pour améliorer la gestion des élevages larvaires en pisciculture de Paraha peue.
       </p>
     </details>
+    </div>
   </article>
 
         <!-- STAGE BTS2 -->
@@ -679,6 +648,7 @@ details summary {
     <div class="ref-logos">
       <img src="assets/references/logos/aquapac.jpg" alt="AQUAPAC">
     </div>
+    <div class="ref-content">
     <h3>2013 (AQUAPAC) — Zootechnie et optimisation des pratiques d'élevage de la crevette bleue <em>Litopenaus stylirostris</em></h3>
     <details>
       <summary>Voir plus</summary>
@@ -690,6 +660,7 @@ details summary {
       en renforçant à la fois la robustesse des pratiques zootechniques et l’efficacité globale du système d’élevage.
       </p>
     </details>
+    </div>
   </article>
   
 </div>
