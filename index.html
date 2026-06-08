@@ -15,7 +15,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <!-- Style -->
+
+
+  <!-- ===================== -->
+  <!-- CSS (STYLE)
+  <!-- ===================== -->
+  
   <style>
     /* Palette : #2900E5 (plus foncé) → blanc */
     :root{
@@ -136,14 +141,20 @@
     @media(min-width:800px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
 
     .card{background:var(--card);border-radius:16px;padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.06);border:1px solid #E8EEF5}
-    .card h3{margin:0 0 6px;font-size:18px}
+    .card h3{margin:0 0 6px;font-size:20px}
     ul.clean{list-style:none;padding:0;margin:10px 0 0}
     ul.clean li{padding:6px 0;color:var(--muted)}
+    .sector-card{padding:0;overflow:hidden;}
+    .sector-img{width:100%;height:140px;object-fit:cover;}
+    #expertises .card{height:100%;}
+    #expertises .grid{align-items:stretch;}
 
     .band{background:linear-gradient(180deg, var(--brand-100) 0%, #FFFFFF 100%);border-top:1px solid #EAF0FF;border-bottom:1px solid #EAF0FF}
 
 #expertises .subtle{color:#5B6B7A;margin:-4px 0 24px;text-align:left;}
 @media (min-width: 768px){#expertises .subtle{text-align:justify;}}
+    
+
     
 .chip::before{ content:"• "; color:var(--brand); }
 
@@ -160,98 +171,39 @@ ul.clean li.note-ref::before {display: none;}
 ul.clean li.note-ref {padding-left: 0; margin-top: 16px;font-style: italic;color: var(--ink);font-size: 12.5px;line-height: 1.3;border-top: 1px solid rgba(0, 0, 0, 0.08);padding-top: 8px;}
 
     
-    /* =========================
-   RÉFÉRENCES — VERSION FIX
-   ========================= */
-
-.ref-grid {
-  margin-top: 10px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-}
-
-/* Carte */
-.ref-card {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  padding: 0;
-}
+/* RÉFÉRENCES */
     
+.ref-grid {margin-top: 10px;display: grid;grid-template-columns: 1fr;gap: 18px;}
+/* Carte */
+.ref-card {display: flex;flex-direction: column;overflow: hidden;padding: 0;}
 /* Image */
-.ref-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
+.ref-img {width: 100%;height: 180px;object-fit: cover;}
 /* Contenu */
-.ref-content {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 10px;
-}
-
+.ref-content {display: flex;flex-direction: column;padding-bottom: 10px;}
 /* Logos */
-.ref-logos {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  padding: 12px 16px 4px;
-  flex-wrap: wrap;
-}
-
-.ref-logos img {
-  height: 26px;
-  width: auto;
-  object-fit: contain;
-  opacity: 0.9;
-}
-
+.ref-logos {display: flex;gap: 12px;align-items: center;padding: 12px 16px 4px;flex-wrap: wrap;}
+.ref-logos img {height: 26px;width: auto;object-fit: contain;opacity: 0.9;}
 /* Titre */
-.ref-card h3 {
-  padding: 8px 16px;
-  margin: 0;
-  font-size: 16px;
-}
-
+.ref-card h3 {padding: 8px 16px;margin: 0;font-size: 16px;}
 /* Texte */
-.ref-card p {
-  padding: 0 16px 10px;
-  margin: 0;
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.5;
-}
-
-/* DETAILS */
-details {
-  padding-bottom: 10px;
-}
-
-details summary {
-  cursor: pointer;
-  font-size: 13px;
-  color: var(--brand);
-  font-weight: 600;
-  padding: 0 16px;
-}
+.ref-card p {padding: 0 16px 10px;margin: 0;font-size: 14px;color: var(--muted);line-height: 1.5;}
+/* Détails */
+details {padding-bottom: 10px;}
+details summary {cursor: pointer;font-size: 13px;color: var(--brand);font-weight: 600;padding: 0 16px;}
 
 /* MOBILE */
 @media (max-width: 700px){
-  .ref-card {
-    grid-template-columns: 1fr;
-  }
-
-  .ref-img {
-    height: 180px;
-  }
-}
+  .ref-card {grid-template-columns: 1fr;}
+  .ref-img {height: 180px;}}
     
   </style>
 
-<!-- Body -->
+
+  
+  <!-- ===================== -->
+  <!-- HTML (BODY)
+  <!-- ===================== -->
+
 </head>
 <body id="top">
 <header>
@@ -316,18 +268,24 @@ details summary {
   Une expertise scientifique et technique pluridisciplinaire au service de l'environnement, des ressources naturelles et des systèmes de production.
 </p>
 
-    <article class="card">
-      <h3><img src="microscope.png" alt="" class="icon">Diagnostic & surveillance environnementale</h3>
-      <ul class="clean">
+   <div class="grid cols-2">
+     
+     <article class="card sector-card">
+       <img class="sector-img" src="diagnostic.jpg" alt="">
+       <h3>
+         <img src="microscope.png" alt="" class="icon">Diagnostic & surveillance environnementale</h3>
+       <ul class="clean">
         <li>Qualité des milieux (eaux, sédiments, biote)</li>
         <li>Pollution et contamination environnementale (pesticides, métaux lourds, macro- et microplastiques, etc.)</li>
         <li>Suivi physico-chimique et dispositifs de surveillance</li>
         <li>Évaluation des risques environnementaux et sanitaires</li>
-      </ul>
-    </article>
+       </ul>
+     </article>
 
-    <article class="card">
-      <h3><img src="light-bulb.png" alt="" class="icon">Recherche appliquée & expertise scientifique</h3>
+    <article class="card sector-card">
+       <img class="sector-img" src="recherche.jpg" alt="">
+       <h3>
+         <img src="light-bulb.png" alt="" class="icon">Recherche appliquée & expertise scientifique</h3>
       <ul class="clean">
         <li>Conception de protocoles expérimentaux</li>
         <li>Analyse et interprétation de données</li>
@@ -336,25 +294,31 @@ details summary {
       </ul>
     </article>
 
-    <article class="card">
-    <h3><img src="fish.png" alt="" class="icon"> Ressources aquatiques & systèmes de production</h3>
-    <ul class="clean">
-      <li>Aquaculture et systèmes d'élevage</li>
-      <li>Pêche et ressources halieutiques</li>
-      <li>Gestion et suivi des écosystèmes aquatiques (aires marines protégées, etc.)</li>
-      <li>Optimisation des systèmes de production</li>
-    </ul>
-  </article>
+    <article class="card sector-card">
+       <img class="sector-img" src="ressources.jpg" alt="">
+       <h3>
+         <img src="fish.png" alt="" class="icon"> Ressources aquatiques & systèmes de production</h3>
+      <ul class="clean">
+        <li>Aquaculture et systèmes d'élevage</li>
+        <li>Pêche et ressources halieutiques</li>
+        <li>Gestion et suivi des écosystèmes aquatiques</li>
+        <li>Optimisation des systèmes de production</li>
+      </ul>
+    </article>
 
-    <article class="card">
-    <h3><img src="aquarium.png" alt="" class="icon"> Création d'écosystèmes aquatiques</h3>
-    <ul class="clean">
-      <li>Aquariums et paludariums sur mesure</li>
-      <li>Aquascaping et biotopes naturels</li>
-      <li>Conception, installation et maintenance</li>
-      <li>Intégration dans des espaces professionnels et privés (hôtels, restaurants, entreprises et particuliers)</li>
-    </ul>
-  </article>
+    <article class="card sector-card">
+       <img class="sector-img" src="aquariology.jpg" alt="">
+       <h3>
+         <img src="aquarium.png" alt="" class="icon"> Création d'écosystèmes aquatiques</h3>
+      <ul class="clean">
+        <li>Aquariums et paludariums sur mesure</li>
+        <li>Aquascaping, biotopes et décors naturels</li>
+        <li>Conception, installation et maintenance</li>
+        <li>Intégration dans des espaces professionnels et privés (hôtels, restaurants, entreprises et particuliers)</li>
+      </ul>
+    </article>
+     
+   </div>
    
 </section>   
   
