@@ -127,7 +127,6 @@
 
     section{padding:56px 0}
     #expertises{ padding-top: 60px; }
-    #secteurs{ padding-top: 60px; }
     #about{ padding-top: 60px; }
     #about p {text-align: justify; }
     #references{padding-top: 60px; }
@@ -143,22 +142,7 @@
 
     .band{background:linear-gradient(180deg, var(--brand-100) 0%, #FFFFFF 100%);border-top:1px solid #EAF0FF;border-bottom:1px solid #EAF0FF}
 
-.subtle{ color:#5B6B7A; margin:-4px 0 12px; }
-
-/* Grille Secteurs auto-adaptative */
-.grid.sectors{grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));}
-@media (min-width: 1000px){.grid.sectors{ grid-template-columns: repeat(2, 1fr); }}
-/* Cartes Secteurs avec image top */
-.sector-card{ padding:0; overflow:hidden }              /* supprime padding général de la card */
-.sector-card h3{ padding:14px 16px 0; margin:0; }       /* remet du padding pour le titre */
-.sector-card ul.clean{ padding:0 16px 14px; margin-top:6px; }
-.sector-img{
-  display:block; width:100%;
-  height:140px; object-fit:cover;
-  border-top-left-radius:16px; border-top-right-radius:16px;
-  background:linear-gradient(135deg,#EEF0FF,#fff);      /* fallback si image absente */
-}
-    
+.subtle{ color:#5B6B7A; margin:-4px 0 12px; } 
 .chip::before{ content:"• "; color:var(--brand); }
 
 .contact{display:grid;gap:18px;align-items:center}
@@ -278,7 +262,6 @@ details summary {
     </div>
     <nav aria-label="Navigation principale" style="display:flex;gap:16px">
       <a href="#expertises">Expertises</a>
-      <a href="#secteurs">Domaines</a>
       <a href="#about">Présentation</a>
       <a href="#references">Références</a>
       <a href="#contact">Contact</a>
@@ -332,14 +315,14 @@ details summary {
       <h3><img src="microscope.png" alt="" class="icon">Diagnostic & surveillance environnementale</h3>
       <ul class="clean">
         <li>Qualité des milieux (eaux, sédiments, biote)</li>
-        <li>Pollution et contamination environnementale</li>
+        <li>Pollution et contamination environnementale (pesticides, métaux lourds, macro- et microplastiques, etc.)</li>
         <li>Suivi physico-chimique et dispositifs de surveillance</li>
         <li>Évaluation des risques environnementaux et sanitaires</li>
       </ul>
     </article>
 
     <article class="card">
-      <h3><img src="light-bulb.png" alt="" class="icon">Recherche appliquée & innovation</h3>
+      <h3><img src="light-bulb.png" alt="" class="icon">Recherche appliquée & expertise scientifique</h3>
       <ul class="clean">
         <li>Conception de protocoles expérimentaux</li>
         <li>Analyse et interprétation de données</li>
@@ -353,7 +336,7 @@ details summary {
     <ul class="clean">
       <li>Aquaculture et systèmes d'élevage</li>
       <li>Pêche et ressources halieutiques</li>
-      <li>Gestion et suivi des écosystèmes aquatiques</li>
+      <li>Gestion et suivi des écosystèmes aquatiques (aires marines protégées, etc.)</li>
       <li>Optimisation des systèmes de production</li>
     </ul>
   </article>
@@ -361,8 +344,8 @@ details summary {
     <article class="card">
     <h3><img src="aquarium.png" alt="" class="icon"> Aquariologie</h3>
     <ul class="clean">
-      <li>Création d'écosystèmes aquatiques : aquariums, paludariums</li>
-      <li>Créations sur mesure : aquascaping, biotopes, décors naturel</li>
+      <li>Création d'écosystèmes aquatiques (aquariums, paludariums, etc.)</li>
+      <li>Créations sur mesure avec aquascaping, biotopes et décors naturel</li>
       <li>Conception, installation et maintenance</li>
       <li>Intégration dans des espaces professionnels et privés (hôtels, restaurants, entreprises et particuliers)</li>
     </ul>
@@ -370,66 +353,6 @@ details summary {
    
 </section>   
   
-<!-- ===================== -->
-<!-- DOMAINES -->
-<!-- ===================== -->
-  
- <section class="container" id="secteurs">
-  <h2>Domaines d'intervention</h2>
-  <p class="subtle">Problématiques pour lesquelles APEX accompagne les acteurs publics, institutionnels et privés.</p>
-
-  <div class="grid sectors">
-
-    <!-- Qualité des milieux & contamination -->
-    <article class="card sector-card">
-      <img class="sector-img" src="assets/secteurs/environnement.jpg" alt="Environnement — milieux & risques">
-      <h3>Qualité des milieux & contamination</h3>
-      <ul class="clean">
-        <li>Qualité de l'eau</li>
-        <li>Contaminants anthropiques (pesticides, métaux lourds, macro- et microplastiques, etc.)</li>
-        <li>Diagnostics environnementaux</li>
-        <li>Plans de surveillance</li>
-      </ul>
-    </article>
-
-    <!-- Ressources aquatiques -->
-    <article class="card sector-card">
-      <img class="sector-img" src="assets/secteurs/peche.jpg" alt="Pêche — ressources & gestion">
-      <h3>Ressources aquatiques</h3>
-      <ul class="clean">
-        <li>Aquaculture</li>
-        <li>Pêche</li>
-        <li>Aires marines protégées</li>
-        <li>Durabilités des pratiques d'exploitation</li>
-      </ul>
-    </article>
-
-    <!-- Santé environnementale -->
-    <article class="card sector-card">
-      <img class="sector-img" src="assets/secteurs/sanitaire.jpg" alt="Sanitaire — qualité de l’eau, biosécurité, reporting">
-      <h3>Santé environnementale</h3>
-      <ul class="clean">
-        <li>Risques sanitaires</li>
-        <li>Biosécurité</li>
-        <li>Évaluation d'impact</li>
-        <li>Qualité des eaux</li>
-      </ul>
-    </article>
-
-    <!-- Agriculture & systèmes de production -->
-    <article class="card sector-card">
-      <img class="sector-img" src="assets/secteurs/agriculture.jpg" alt="Agriculture — exploitation, sols, eau">
-      <h3>Agriculture & systèmes de production</h3>
-      <ul class="clean">
-        <li>Qualité des sols</li>
-        <li>Gestion de l'eau</li>
-        <li>Agriculture durable</li>
-        <li>Évaluation environnementale</li>
-      </ul>
-    </article>
-    </div>
- </section>
-
   
   <!-- ===================== -->
   <!-- PRESENTATION -->
