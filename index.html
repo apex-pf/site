@@ -165,42 +165,42 @@
 .box{background:#fff;border:1px solid #E8EEF5;border-radius:16px;padding:18px}
 footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
 
-#expertises ul.clean li {
+/* Bullets globales */
+ul.clean li {
   position: relative;
   padding-left: 22px;
-  padding-top: 0;          /* supprime le padding vertical qui cassait l’alignement */
-  padding-bottom: 0;
   margin: 6px 0;
   line-height: 1.45;
 }
 
-#expertises ul.clean li::before {
+ul.clean li::before {
   content: "";
   width: 7px;
   height: 7px;
-  background: var(--muted); /* même couleur que le texte */
+  background: var(--muted);
   border-radius: 50%;
   position: absolute;
   left: 0;
-  top: 0.42em;  /* parfaitement centré sur la première ligne */
+  top: 0.42em;
 }
 
-    #expertises ul.clean li.note-ref::before {
-  display: none; /* supprime le bullet */
+/* Exception : note */
+ul.clean li.note-ref::before {
+  display: none;
 }
 
-#expertises ul.clean li.note-ref {
+ul.clean li.note-ref {
   padding-left: 0; 
   margin-top: 16px;
   font-style: italic;
   color: var(--ink);
   font-size: 12.5px;
   line-height: 1.3;
-  /* Séparateur visuel très fin */
   border-top: 1px solid rgba(0, 0, 0, 0.08);
-  padding-top: 8px; /* espace au-dessus de la note */
+  padding-top: 8px;
 }
 
+    
     /* =========================
    RÉFÉRENCES — VERSION FIX
    ========================= */
