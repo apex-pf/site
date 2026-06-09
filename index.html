@@ -61,18 +61,14 @@
       line-height: 1;} /* lisible sur fond blanc à gauche */
 
     /* Navigation */
-    nav[aria-label="Navigation principale"] a{color:#fff}
+    nav[aria-label="Navigation principale"]{display:flex;gap:16px;}
+    @media (max-width: 768px){.nav{flex-direction:column;gap:12px;}
+                            nav[aria-label="Navigation principale"]{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;}}
 
     /* HERO en 2 colonnes : logo à gauche (zone claire), texte blanc à droite (zone bleue) */
-    .hero{padding:34px 0 60px}
+    .hero{padding:34px 0 60px;text-align:center;}
     .hero-grid{display:grid;gap:22px;align-items:center}
-    @media (min-width: 900px){
-      .hero-grid{
-        /* colonne gauche min 220px, sinon 1/3 ; texte 2/3 */
-        grid-template-columns: auto 2fr;
-        align-items: center;
-      }
-    }
+    @media (min-width: 900px){.hero-grid{grid-template-columns: auto 2fr;align-items: center;}}
 
     .hero h1{color:#fff;
              font-size: clamp(26px, 3.6vw, 42px);
@@ -83,11 +79,11 @@
     .hero-separator{width:100%;max-width:830px;height:2px;background:rgba(255,255,255,.75);margin:28px 0 28px;}
     .hero-intro{color:#fff;font-size:clamp(15px,1.9vw,18px);line-height:1.5;max-width:830px;margin:14px 0 14px;opacity:.95;font-style:italic;}
     .hero p.lead{color:#fff;font-size:clamp(16px,2vw,19px);line-height:1.5;max-width:830px;margin:0 0 14px;opacity:.95;}
-    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px; justify-content:center;}
     .btn{display:inline-flex;align-items:center;gap:10px;border-radius:12px;padding:12px 18px;font-weight:600}
     .btn.primary{background:#fff;color:var(--brand);border:1.5px solid var(--brand);box-shadow:0 10px 24px rgba(0,0,0,.08)}
     .btn.ghost{border:1.5px solid rgba(255,255,255,.75);color:#fff}
-    .pill{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+    .pill{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;justify-content:center;}
     .pill span{background:rgba(255,255,255,.16);color:#fff;padding:6px 10px;border-radius:999px;font-size:16px}
 
     /* Bloc logo à gauche : fond blanc pour contraster un logo bleu */
@@ -99,6 +95,7 @@
       padding:14px 14px;
       display:flex;align-items:center;justify-content:center;
       min-height:160px;
+      margin:auto;
     }
     .hero-logo{
       width: clamp(180px, 24vw, 320px);
