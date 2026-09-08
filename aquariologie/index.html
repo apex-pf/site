@@ -1,168 +1,577 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="icon" type="image/png" href="../favicon-light.png">
   <!-- Thème clair -->
   <link rel="icon" type="image/png" href="../favicon-dark.png" media="(prefers-color-scheme: light)">
   <!-- Thème sombre -->
   <link rel="icon" type="image/png" href="../favicon-light.png" media="(prefers-color-scheme: dark)">
+
   <title>APEX | Aquariologie</title>
+
   <meta name="description" content="APEX — Aquariologie conçoit, installe et entretient des écosystèmes aquatiques sur mesure : aquariums, paludariums, aquascaping et biotopes naturels en Polynésie française.">
+
   <meta name="theme-color" content="#2900E5">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-
-  <!-- ===================== -->
-  <!-- CSS (STYLE)
-  <!-- ===================== -->
-  
   <style>
-    /* Palette APEX */
+
+    /* ===================== */
+    /* PALETTE APEX */
+    /* ===================== */
+
     :root{
-      --brand:#2900E5;          /* bleu le plus foncé utilisé */
-      --brand-600:#5A48F0;      /* bleu intermédiaire */
-      --brand-100:#EEF0FF;      /* très clair pour fonds doux */
+      --brand:#2900E5;
+      --brand-600:#5A48F0;
+      --brand-100:#EEF0FF;
       --ink:#0F172A;
       --muted:#5B6B7A;
       --bg:#FFFFFF;
       --card:#FFFFFF;
     }
 
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
-    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
-    .container{max-width:1400px;margin:0 auto;padding:0 20px}
-
-    /* Header */
-    header{color:#fff;background:var(--brand);}
-
-    .nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:18px 0}
-    .icon {width: 20px;height: 20px;vertical-align: -3px;margin-right: 6px;}
-    
-    /* Barre de marque : logo + texte */
-    .brand{display:flex;align-items:center}
-    .brand .mark{display:none} /* on masque l'ancien carré si présent */
-    .brand-link{display:flex;align-items:center;gap:10px;text-decoration:none}
-    .brand-logo{height:40px;width:auto;display:block}
-    @media (min-width: 900px){ .brand-logo{height:40px} }
-    .brand-text{
-      font-size: clamp(24px, 3.2vw, 42px); /* ← augmente ici si tu veux encore plus grand */
-      font-weight: 800;
-      letter-spacing: .5px;
-      color: #fff;
-      line-height: 1;}
-
-    /* Navigation */
-    nav[aria-label="Navigation principale"]{display:flex;gap:16px;margin-right:30px;}
-    nav[aria-label="Navigation principale"] a{color:#fff;}
-    @media (max-width: 768px){.nav{flex-direction:column;gap:12px;}
-                            nav[aria-label="Navigation principale"]{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;}}
-
-    /* HERO en 2 colonnes : logo à gauche, texte à droite */
-    .hero{padding:34px 0 60px}
-    .hero-grid{display:grid;gap:22px;align-items:center}
-    @media (min-width: 900px){.hero-grid{grid-template-columns: auto 2fr;align-items: center;}}
-    .hero h1{color:#fff;font-size: clamp(26px, 3.6vw, 42px);line-height: 1.15;margin: 6px 0 8px;font-weight: 800;}
-    .hero-separator{width:100%;max-width:830px;height:2px;background:rgba(255,255,255,.75);margin:28px 0 28px;}
-    .hero-intro{color:#fff;font-size:clamp(15px,1.9vw,18px);line-height:1.5;max-width:830px;margin:14px 0 14px;opacity:.95;font-style:italic;text-align:justify;}
-    .hero p.lead{color:#fff;font-size:clamp(16px,2vw,19px);line-height:1.5;max-width:830px;margin:0 0 14px;opacity:.95;}
-    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
-    .btn{display:inline-flex;align-items:center;gap:10px;border-radius:12px;padding:12px 18px;font-weight:600}
-    .btn.primary{background:#fff;color:var(--brand);border:1.5px solid var(--brand);box-shadow:0 10px 24px rgba(0,0,0,.08)}
-    .btn.ghost{border:1.5px solid rgba(255,255,255,.75);color:#fff}
-    .pill{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;}
-    .pill span{background:rgba(255,255,255,.16);color:#fff;padding:6px 10px;border-radius:999px;font-size:16px}
-
-    /* Bloc logo à gauche : fond blanc pour contraster un logo bleu */
-    .hero-logo-card{background:#FFFFFF;border:1px solid #E8EEF5;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.08);padding:14px 14px;display:flex;align-items:center;min-height:160px;margin:auto;}
-    .hero-logo{width: clamp(180px, 24vw, 320px);height:auto; display:block;}
-
-    /* SECTIONS */
-    section{padding:60px 0}
-
-    h2{color: var(--brand);font-size:clamp(22px,3vw,30px);margin:0 0 18px}
-    .grid{display:grid;gap:18px}
-    
-    @media(min-width:800px){
-      .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-      .grid.cols-2{grid-template-columns:repeat(2,1fr)}}
-
-    .card{background:var(--card);border-radius:16px;padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.06);border:1px solid #E8EEF5}
-    .card h3{margin:0 0 6px;font-size:20px}
-    
-    ul.clean{list-style:none;padding:0;margin:10px 0 0}
-    ul.clean li{padding:6px 0;color:var(--muted)}
-    .sector-card{padding:0;overflow:hidden;}
-    .sector-img{width:100%;height:140px;object-fit:cover;}
-    
-    .expertise-card{padding:0;overflow:hidden;}
-    .expertise-card h3{padding:16px 20px 0;margin:0;}
-    .expertise-card ul.clean{padding:0 20px 20px;margin-top:8px;}
-    
-    .band{background:linear-gradient(180deg, var(--brand-100) 0%, #FFFFFF 100%);border-top:1px solid #EAF0FF;border-bottom:1px solid #EAF0FF}
-    .chip::before{ content:"• "; color:var(--brand); }
-    
-    .contact{display:grid;gap:18px;align-items:center}
-    @media(min-width:860px){.contact{grid-template-columns: 1fr;}}
-    .box{background:#fff;border:1px solid #E8EEF5;border-radius:16px;padding:18px}
-    footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
-    
-    /* Bullets globales */
-    ul.clean li {position: relative;padding-left: 22px;margin: 6px 0;line-height: 1.45;}
-    ul.clean li::before {content: "";width: 6px;height: 6px;background: var(--muted);border-radius: 50%;position: absolute;left: 0;top: 0.85em;transform: none;}
-    /* Exception : note */
-    ul.clean li.note-ref::before {display: none;}
-    ul.clean li.note-ref {padding-left: 0; margin-top: 16px;font-style: italic;color: var(--ink);font-size: 12.5px;line-height: 1.3;border-top: 1px solid rgba(0, 0, 0, 0.08);padding-top: 8px;}
-    
-    /* RÉALISATIONS */
-    .ref-grid {display: grid;grid-template-columns: 1fr;gap: 18px;}
-    /* Carte */
-    .ref-card {display: flex;flex-direction: column;overflow: hidden;padding: 0;}
-    /* Image */
-    .ref-img {width: 100%;height: 180px;object-fit: cover;}
-    /* Contenu */
-    .ref-content {display: flex;flex-direction: column;padding-bottom: 10px;}
-    /* Logos */
-    .ref-logos {display: flex;gap: 12px;align-items: center;padding: 12px 16px 4px;flex-wrap: wrap;}
-    .ref-logos img {height: 26px;width: auto;object-fit: contain;opacity: 0.9;}
-    /* Titre */
-    .ref-card h3 {padding: 8px 16px;margin: 0;font-size: 16px;}
-    /* Texte */
-    .ref-card p {padding: 0 16px 10px;margin: 0;font-size: 14px;color: var(--muted);line-height: 1.5;}
-    /* Détails */
-    details {padding-bottom: 10px;}
-    details summary {cursor: pointer;font-size: 13px;color: var(--brand);font-weight: 600;padding: 0 16px;}
-    
-    /* MOBILE */
-    @media (max-width: 700px){
-      .ref-card {grid-template-columns: 1fr;}
-      .ref-img {height: 180px;}
-      .container {padding-left: 20px;padding-right: 20px;}
+    *{
+      box-sizing:border-box;
     }
-  
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:'Inter',system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.5;
+    }
+
+    a{
+      color:var(--brand);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    .container{
+      max-width:1400px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+
+    /* ===================== */
+    /* HEADER */
+    /* ===================== */
+
+    header{
+      color:#fff;
+      background:var(--brand);
+    }
+
+    .nav{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 0;
+    }
+
+    .icon{
+      width:20px;
+      height:20px;
+      vertical-align:-3px;
+      margin-right:6px;
+    }
+
+
+    /* ===================== */
+    /* MARQUE */
+    /* ===================== */
+
+    .brand{
+      display:flex;
+      align-items:center;
+    }
+
+    .brand .mark{
+      display:none;
+    }
+
+    .brand-link{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+    }
+
+    .brand-logo{
+      height:40px;
+      width:auto;
+      display:block;
+    }
+
+    .brand-text{
+      font-size:clamp(24px,3.2vw,42px);
+      font-weight:800;
+      letter-spacing:.5px;
+      color:#fff;
+      line-height:1;
+    }
+
+    @media (min-width:900px){
+      .brand-logo{
+        height:40px;
+      }
+    }
+
+
+    /* ===================== */
+    /* NAVIGATION */
+    /* ===================== */
+
+    nav[aria-label="Navigation principale"]{
+      display:flex;
+      gap:16px;
+      margin-right:30px;
+    }
+
+    nav[aria-label="Navigation principale"] a{
+      color:#fff;
+    }
+
+    @media (max-width:768px){
+
+      .nav{
+        flex-direction:column;
+        gap:12px;
+      }
+
+      nav[aria-label="Navigation principale"]{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px;
+        margin-right:0;
+      }
+
+    }
+
+
+    /* ===================== */
+    /* HERO */
+    /* ===================== */
+
+    .hero{
+      padding:34px 0 60px;
+    }
+
+    .hero-grid{
+      display:grid;
+      gap:22px;
+      align-items:center;
+    }
+
+    @media (min-width:900px){
+
+      .hero-grid{
+        grid-template-columns:auto 2fr;
+        align-items:center;
+      }
+
+    }
+
+    .hero h1{
+      color:#fff;
+      font-size:clamp(26px,3.6vw,42px);
+      line-height:1.15;
+      margin:6px 0 8px;
+      font-weight:800;
+    }
+
+    .hero-separator{
+      width:100%;
+      max-width:830px;
+      height:2px;
+      background:rgba(255,255,255,.75);
+      margin:28px 0;
+    }
+
+    .hero-intro{
+      color:#fff;
+      font-size:clamp(15px,1.9vw,18px);
+      line-height:1.5;
+      max-width:830px;
+      margin:14px 0;
+      opacity:.95;
+      font-style:italic;
+      text-align:justify;
+    }
+
+    .hero p.lead{
+      color:#fff;
+      font-size:clamp(16px,2vw,19px);
+      line-height:1.5;
+      max-width:830px;
+      margin:0 0 14px;
+      opacity:.95;
+    }
+
+    .cta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border-radius:12px;
+      padding:12px 18px;
+      font-weight:600;
+    }
+
+    .btn.primary{
+      background:#fff;
+      color:var(--brand);
+      border:1.5px solid var(--brand);
+      box-shadow:0 10px 24px rgba(0,0,0,.08);
+    }
+
+    .btn.ghost{
+      border:1.5px solid rgba(255,255,255,.75);
+      color:#fff;
+    }
+
+    .pill{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .pill span{
+      background:rgba(255,255,255,.16);
+      color:#fff;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:16px;
+    }
+
+
+    /* ===================== */
+    /* LOGO DU HERO */
+    /* ===================== */
+
+    .hero-logo-card{
+      background:#FFFFFF;
+      border:1px solid #E8EEF5;
+      border-radius:18px;
+      box-shadow:0 8px 24px rgba(0,0,0,.08);
+      padding:14px;
+      display:flex;
+      align-items:center;
+      min-height:160px;
+      margin:auto;
+    }
+
+    .hero-logo{
+      width:clamp(180px,24vw,320px);
+      height:auto;
+      display:block;
+    }
+
+
+    /* ===================== */
+    /* SECTIONS */
+    /* ===================== */
+
+    section{
+      padding:60px 0;
+    }
+
+    h2{
+      color:var(--brand);
+      font-size:clamp(22px,3vw,30px);
+      margin:0 0 18px;
+    }
+
+    .grid{
+      display:grid;
+      gap:18px;
+    }
+
+    @media(min-width:800px){
+
+      .grid.cols-3{
+        grid-template-columns:repeat(3,1fr);
+      }
+
+      .grid.cols-2{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+    }
+
+
+    /* ===================== */
+    /* CARTES */
+    /* ===================== */
+
+    .card{
+      background:var(--card);
+      border-radius:16px;
+      padding:20px;
+      box-shadow:0 4px 14px rgba(0,0,0,.06);
+      border:1px solid #E8EEF5;
+    }
+
+    .card h3{
+      margin:0 0 6px;
+      font-size:20px;
+    }
+
+    .sector-card{
+      padding:0;
+      overflow:hidden;
+    }
+
+    .sector-img{
+      width:100%;
+      height:140px;
+      object-fit:cover;
+    }
+
+    .expertise-card{
+      padding:0;
+      overflow:hidden;
+    }
+
+    .expertise-card h3{
+      padding:16px 20px 0;
+      margin:0;
+    }
+
+    .expertise-card ul.clean{
+      padding:0 20px 20px;
+      margin-top:8px;
+    }
+
+
+    /* ===================== */
+    /* INTRODUCTION PRESTATIONS */
+    /* ===================== */
+
+    #prestations .subtle{
+      color:var(--muted);
+      font-style:italic;
+      margin:-4px 0 24px;
+      text-align:left;
+    }
+
+    @media (min-width:768px){
+
+      #prestations .subtle{
+        text-align:justify;
+      }
+
+    }
+
+
+    /* ===================== */
+    /* LISTES */
+    /* ===================== */
+
+    ul.clean{
+      list-style:none;
+      padding:0;
+      margin:10px 0 0;
+    }
+
+    ul.clean li{
+      position:relative;
+      padding-left:22px;
+      margin:6px 0;
+      line-height:1.45;
+      color:var(--muted);
+    }
+
+    ul.clean li::before{
+      content:"";
+      width:6px;
+      height:6px;
+      background:var(--muted);
+      border-radius:50%;
+      position:absolute;
+      left:0;
+      top:.85em;
+    }
+
+    /* Exception : note */
+
+    ul.clean li.note-ref::before{
+      display:none;
+    }
+
+    ul.clean li.note-ref{
+      padding-left:0;
+      margin-top:16px;
+      font-style:italic;
+      color:var(--ink);
+      font-size:12.5px;
+      line-height:1.3;
+      border-top:1px solid rgba(0,0,0,.08);
+      padding-top:8px;
+    }
+
+
+    /* ===================== */
+    /* BANDES */
+    /* ===================== */
+
+    .band{
+      background:linear-gradient(
+        180deg,
+        var(--brand-100) 0%,
+        #FFFFFF 100%
+      );
+      border-top:1px solid #EAF0FF;
+      border-bottom:1px solid #EAF0FF;
+    }
+
+    .chip::before{
+      content:"• ";
+      color:var(--brand);
+    }
+
+
+    /* ===================== */
+    /* RÉALISATIONS */
+    /* ===================== */
+
+    .ref-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+    }
+
+    .ref-card{
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+      padding:0;
+    }
+
+    .ref-img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+    }
+
+    .ref-content{
+      display:flex;
+      flex-direction:column;
+      padding-bottom:10px;
+    }
+
+    .ref-logos{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      padding:12px 16px 4px;
+      flex-wrap:wrap;
+    }
+
+    .ref-logos img{
+      height:26px;
+      width:auto;
+      object-fit:contain;
+      opacity:.9;
+    }
+
+    .ref-card h3{
+      padding:8px 16px;
+      margin:0;
+      font-size:16px;
+    }
+
+    .ref-card p{
+      padding:0 16px 10px;
+      margin:0;
+      font-size:14px;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    details{
+      padding-bottom:10px;
+    }
+
+    details summary{
+      cursor:pointer;
+      font-size:13px;
+      color:var(--brand);
+      font-weight:600;
+      padding:0 16px;
+    }
+
+
+    /* ===================== */
+    /* CONTACT */
+    /* ===================== */
+
+    .contact{display:grid;gap:18px;align-items:center;}
+    @media(min-width:860px){
+      .contact{grid-template-columns:1fr;}
+    }
+
+    .box{background:#fff;border:1px solid #E8EEF5;border-radius:16px;padding:18px;}
+
+    
+    /* ===================== */
+    /* FOOTER */
+    /* ===================== */
+
+    footer{padding:32px 0 48px;color:#5B6B7A;font-size:14px;text-align:left;}
+
+    
+    /* ===================== */
+    /* MOBILE */
+    /* ===================== */
+
+    @media (max-width:700px){
+      .ref-img{height:180px;}
+      .container{padding-left:20px;padding-right:20px;}}
   </style>
-
-  
-  <!-- ===================== -->
-  <!-- HTML (BODY)
-  <!-- ===================== -->
-
 </head>
 <body id="top">
+
+  
+<!-- ===================== -->
+<!-- HEADER + HERO -->
+<!-- ===================== -->
+
 <header>
+
   <div class="container nav">
     <div class="brand" aria-label="APEX — Aquariologie">
       <a href="#top" class="brand-link" aria-label="Accueil APEX — Aquariologie">
-        <img src="../logo(2).png" alt="APEX — Aquariologie" class="brand-logo">
+        <img src="../logo(2).png"
+             alt="APEX — Aquariologie"
+             class="brand-logo">
         <span class="brand-text">APEX</span>
       </a>
     </div>
-    <nav aria-label="Navigation principale" style="display:flex;gap:16px">
-       <a href="#prestations">Prestations</a>
+
+    <nav aria-label="Navigation principale">
+      <a href="#prestations">Prestations</a>
       <a href="#realisations">Réalisations</a>
       <a href="#approche">Notre approche</a>
       <a href="#about">À propos</a>
@@ -172,13 +581,12 @@
 
   <div class="container hero">
     <div class="hero-grid">
-      <!-- Colonne gauche : logo très visible sur fond blanc -->
       <div class="hero-logo-card">
-        <!-- Remplace 'logo.png' par le nom réel de ton fichier dans le dépôt si besoin -->
-        <img class="hero-logo" src="Logo-APEX.jpg" alt="APEX — Aquariologie">
+        <img class="hero-logo"
+             src="Logo-APEX.jpg"
+             alt="APEX — Aquariologie">
       </div>
 
-      <!-- Colonne droite : texte blanc sur fond bleu -->
       <div>
         <h1>Création d’écosystèmes aquatiques</h1>
         <p class="lead">
@@ -188,10 +596,25 @@
         <p class="hero-intro">
           Conception, installation et entretien d’écosystèmes aquatiques sur mesure pour les particuliers et les professionnels en Polynésie française.
         </p>
+
         <div class="cta">
-          <a class="btn primary" href="mailto:tgardon.apex@gmail.com"><img src="../devis.png" alt="" class="icon"> Discuter de votre projet</a>
-          <a class="btn ghost" href="tel:+68987369491"><img src="../telephone-call.png" alt="" class="icon"> (+689) 87&nbsp;36&nbsp;94&nbsp;91</a>
+          <a class="btn primary"
+             href="mailto:tgardon.apex@gmail.com">
+            <img src="../devis.png"
+                 alt=""
+                 class="icon">
+            Discuter de votre projet
+          </a>
+
+          <a class="btn ghost"
+             href="tel:+68987369491">
+            <img src="../telephone-call.png"
+                 alt=""
+                 class="icon">
+            (+689) 87&nbsp;36&nbsp;94&nbsp;91
+          </a>
         </div>
+        
         <div class="pill" aria-label="Prestations">
           <span>Conception sur mesure</span>
           <span>Aquascaping</span>
@@ -202,26 +625,26 @@
       </div>
     </div>
   </div>
+
 </header>
 
-  
 <!-- ===================== -->
 <!-- PRESTATIONS -->
 <!-- ===================== -->
 
 <main>
   <section class="container" id="prestations">
-
     <h2>Prestations</h2>
-
     <p class="subtle">
       De la conception à l’entretien, APEX vous accompagne dans la création d’écosystèmes aquatiques sur mesure, adaptés à vos envies, à votre espace et aux besoins des espèces accueillies.
     </p>
-
     <div class="grid cols-2">
 
+      <!-- CONCEPTION -->
       <article class="card expertise-card">
-        <img class="sector-img" src="IMAGE-CONCEPTION" alt="Conception d'un aquarium sur mesure">
+        <img class="sector-img"
+             src="IMAGE-CONCEPTION"
+             alt="Conception d'un aquarium sur mesure">
         <h3>Conception sur mesure</h3>
         <ul class="clean">
           <li>Étude du projet et définition des besoins</li>
@@ -231,8 +654,11 @@
         </ul>
       </article>
 
+      <!-- AQUASCAPING -->
       <article class="card expertise-card">
-        <img class="sector-img" src="IMAGE-AQUASCAPING" alt="Aquascaping et décor naturel">
+        <img class="sector-img"
+             src="IMAGE-AQUASCAPING"
+             alt="Aquascaping et décor naturel">
         <h3>Aquascaping & décors naturels</h3>
         <ul class="clean">
           <li>Création de paysages aquatiques et de décors naturels</li>
@@ -242,8 +668,11 @@
         </ul>
       </article>
 
+      <!-- INSTALLATION -->
       <article class="card expertise-card">
-        <img class="sector-img" src="IMAGE-INSTALLATION" alt="Installation et mise en service d'un aquarium">
+        <img class="sector-img"
+             src="IMAGE-INSTALLATION"
+             alt="Installation et mise en service d'un aquarium">
         <h3>Installation & mise en service</h3>
         <ul class="clean">
           <li>Installation de l’aquarium ou du paludarium et de ses équipements</li>
@@ -253,8 +682,11 @@
         </ul>
       </article>
 
+      <!-- MAINTENANCE -->
       <article class="card expertise-card">
-        <img class="sector-img" src="IMAGE-MAINTENANCE" alt="Entretien et maintenance d'un aquarium">
+        <img class="sector-img"
+             src="IMAGE-MAINTENANCE"
+             alt="Entretien et maintenance d'un aquarium">
         <h3>Maintenance & suivi</h3>
         <ul class="clean">
           <li>Entretien ponctuel ou régulier des installations</li>
@@ -263,9 +695,8 @@
           <li>Conseil, suivi biologique et optimisation de l’écosystème</li>
         </ul>
       </article>
-
+      
     </div>
-
   </section>
   
   
