@@ -1,1 +1,703 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="../assets/favicon-light.png">
+  <!-- Thème clair -->
+  <link rel="icon" type="image/png" href="../assets/favicon-dark.png" media="(prefers-color-scheme: light)">
+  <!-- Thème sombre -->
+  <link rel="icon" type="image/png" href="../assets/favicon-light.png" media="(prefers-color-scheme: dark)">
+  <title>APEX — Aquariologie | Création d'écosystèmes aquatiques</title>
+  <meta name="description" content="APEX — Aquariologie conçoit, installe et entretient des écosystèmes aquatiques sur mesure : aquariums, paludariums, aquascaping et biotopes naturels en Polynésie française.">
+  <meta name="theme-color" content="#2900E5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
+
+  <!-- ===================== -->
+  <!-- CSS (STYLE)
+  <!-- ===================== -->
+  
+  <style>
+    /* Palette APEX */
+    :root{
+      --brand:#2900E5;          /* bleu le plus foncé utilisé */
+      --brand-600:#5A48F0;      /* bleu intermédiaire */
+      --brand-100:#EEF0FF;      /* très clair pour fonds doux */
+      --ink:#0F172A;
+      --muted:#5B6B7A;
+      --bg:#FFFFFF;
+      --card:#FFFFFF;
+    }
+
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    .container{max-width:1400px;margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{color:#fff;background:var(--brand);}
+
+    .nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:18px 0}
+    .icon {width: 20px;height: 20px;vertical-align: -3px;margin-right: 6px;}
+    
+    /* Barre de marque : logo + texte */
+    .brand{display:flex;align-items:center}
+    .brand .mark{display:none} /* on masque l'ancien carré si présent */
+    .brand-link{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .brand-logo{height:40px;width:auto;display:block}
+    @media (min-width: 900px){ .brand-logo{height:40px} }
+    .brand-text{
+      font-size: clamp(24px, 3.2vw, 42px); /* ← augmente ici si tu veux encore plus grand */
+      font-weight: 800;
+      letter-spacing: .5px;
+      color: #fff;
+      line-height: 1;}
+
+    /* Navigation */
+    nav[aria-label="Navigation principale"]{display:flex;gap:16px;margin-right:30px;}
+    nav[aria-label="Navigation principale"] a{color:#fff;}
+    @media (max-width: 768px){.nav{flex-direction:column;gap:12px;}
+                            nav[aria-label="Navigation principale"]{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;}}
+
+    /* HERO en 2 colonnes : logo à gauche, texte à droite */
+    .hero{padding:34px 0 60px}
+    .hero-grid{display:grid;gap:22px;align-items:center}
+    @media (min-width: 900px){.hero-grid{grid-template-columns: auto 2fr;align-items: center;}}
+
+    .hero h1{color:#fff;font-size: clamp(26px, 3.6vw, 42px);line-height: 1.15;margin: 6px 0 8px;font-weight: 800;}
+    .hero-separator{width:100%;max-width:830px;height:2px;background:rgba(255,255,255,.75);margin:28px 0 28px;}
+    .hero-intro{color:#fff;font-size:clamp(15px,1.9vw,18px);line-height:1.5;max-width:830px;margin:14px 0 14px;opacity:.95;font-style:italic;text-align:justify;}
+    .hero p.lead{color:#fff;font-size:clamp(16px,2vw,19px);line-height:1.5;max-width:830px;margin:0 0 14px;opacity:.95;}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+    .btn{display:inline-flex;align-items:center;gap:10px;border-radius:12px;padding:12px 18px;font-weight:600}
+    .btn.primary{background:#fff;color:var(--brand);border:1.5px solid var(--brand);box-shadow:0 10px 24px rgba(0,0,0,.08)}
+    .btn.ghost{border:1.5px solid rgba(255,255,255,.75);color:#fff}
+    .pill{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;}
+    .pill span{background:rgba(255,255,255,.16);color:#fff;padding:6px 10px;border-radius:999px;font-size:16px}
+
+    /* Bloc logo à gauche : fond blanc pour contraster un logo bleu */
+    .hero-logo-card{background:#FFFFFF;border:1px solid #E8EEF5;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.08);padding:14px 14px;display:flex;align-items:center;min-height:160px;margin:auto;}
+    .hero-logo{width: clamp(180px, 24vw, 320px);height:auto; display:block;}
+
+    /* Style section "Présentation" */
+    @media (min-width: 900px){
+      .about-grid{display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: start;}}
+    .pub-list a{ color:var(--brand); text-decoration:underline; }
+    .about-card{background:#fff; border:1px solid #E8EEF5; border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.06); overflow:hidden;width: 100%;max-width: 380px; justify-self: end;}
+    .about-img{display:block;width:100%;height:380px;object-fit: cover;}
+    .about-facts{padding:14px 16px; display:grid; gap:8px; font-size:14px; color:#334155;}
+    .about-facts .name{font-weight:800; font-size:20px;}
+    .about-facts .role{color:#64748b; font-size:14px; margin-top:2px; }
+    .about-facts .spec{color:#334155; font-size:14px; margin-top:6px; }
+    .about-facts .sep{border-top:2px solid #E8EEF5; margin:10px 0;}
+    .about-facts .kv{font-size:14px; color:#334155;}
+    .about-facts .kv strong{ color:#0F172A;}
+    .kv-title {display: flex;align-items: center;gap: 6px;margin-bottom: 6px;}
+    .kv-list {margin: 0;padding-left: 18px;}
+    
+    /* Sous-titre de section dans #about */
+    .about-sub{margin: 14px 0 8px;font-size: 18px;font-weight: 500; margin: 40px 0 8px; color: var(--brand);}
+    .pub-list{ font-size: 13px; }
+    .pub-list .pub-year{display:inline-block; min-width:3.5ch; margin-right:2px;font-weight:400; color:var(--brand);}
+    .pub-list .pub-venue{ color:#64748b; }
+    .about-bullets.pub-list{padding-left:0; margin-left: 12px;margin-bottom: 0;}
+    .about-bullets.pub-list li{padding:6px 0; text-align: justify;}
+    .about-bullets.pub-list li::before{width:6px; height:6px; top:10px;box-shadow:0 0 0 2px rgba(41,0,229,.08);}
+
+    section{padding:56px 0}
+    #expertises{ padding-top: 60px;}
+    #about{ padding-top: 60px;}
+    #about p {text-align: justify; }
+    #references{ padding-top: 60px;}
+    #contact{ padding-top: 60px;}
+
+    h2{color: var(--brand);font-size:clamp(22px,3vw,30px);margin:0 0 18px}
+    .grid{display:grid;gap:18px}
+    @media(min-width:800px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
+
+    .card{background:var(--card);border-radius:16px;padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.06);border:1px solid #E8EEF5}
+    .card h3{margin:0 0 6px;font-size:20px}
+    ul.clean{list-style:none;padding:0;margin:10px 0 0}
+    ul.clean li{padding:6px 0;color:var(--muted)}
+    .sector-card{padding:0;overflow:hidden;}
+    .sector-img{width:100%;height:140px;object-fit:cover;}
+    
+    #expertises .card{height:100%;}
+    #expertises .grid{align-items:stretch;}
+    .expertise-card{padding:0;overflow:hidden;}
+    .expertise-card h3{padding:16px 20px 0;margin:0;}
+    .expertise-card ul.clean{padding:0 20px 20px;margin-top:8px;}
+    .expertise-card ul.clean:has(+ .aquario-link) {padding-bottom: 2px;}
+
+    .aquario-link {display: block;width: fit-content;margin: 0 20px 16px auto;font-size: 14px;font-weight: 600;color: var(--brand);text-decoration: none;text-align: right;}
+    .aquario-link:hover {text-decoration: underline;}
+    
+    .band{background:linear-gradient(180deg, var(--brand-100) 0%, #FFFFFF 100%);border-top:1px solid #EAF0FF;border-bottom:1px solid #EAF0FF}
+
+#expertises .subtle{color:#5B6B7A;font-style: italic;margin:-4px 0 24px;text-align:left;}
+@media (min-width: 768px){#expertises .subtle{text-align:justify;}}
+    
+
+    
+.chip::before{ content:"• "; color:var(--brand); }
+
+.contact{display:grid;gap:18px;align-items:center}
+@media(min-width:860px){.contact{grid-template-columns: 1fr;}}
+.box{background:#fff;border:1px solid #E8EEF5;border-radius:16px;padding:18px}
+footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
+
+/* Bullets globales */
+ul.clean li {position: relative;padding-left: 22px;margin: 6px 0;line-height: 1.45;}
+ul.clean li::before {content: "";width: 6px;height: 6px;background: var(--muted);border-radius: 50%;position: absolute;left: 0;top: 0.85em;transform: none;}
+/* Exception : note */
+ul.clean li.note-ref::before {display: none;}
+ul.clean li.note-ref {padding-left: 0; margin-top: 16px;font-style: italic;color: var(--ink);font-size: 12.5px;line-height: 1.3;border-top: 1px solid rgba(0, 0, 0, 0.08);padding-top: 8px;}
+
+    
+/* RÉFÉRENCES */
+    
+.ref-grid {display: grid;grid-template-columns: 1fr;gap: 18px;}
+/* Carte */
+.ref-card {display: flex;flex-direction: column;overflow: hidden;padding: 0;}
+/* Image */
+.ref-img {width: 100%;height: 180px;object-fit: cover;}
+/* Contenu */
+.ref-content {display: flex;flex-direction: column;padding-bottom: 10px;}
+/* Logos */
+.ref-logos {display: flex;gap: 12px;align-items: center;padding: 12px 16px 4px;flex-wrap: wrap;}
+.ref-logos img {height: 26px;width: auto;object-fit: contain;opacity: 0.9;}
+/* Titre */
+.ref-card h3 {padding: 8px 16px;margin: 0;font-size: 16px;}
+/* Texte */
+.ref-card p {padding: 0 16px 10px;margin: 0;font-size: 14px;color: var(--muted);line-height: 1.5;}
+/* Détails */
+details {padding-bottom: 10px;}
+details summary {cursor: pointer;font-size: 13px;color: var(--brand);font-weight: 600;padding: 0 16px;}
+
+/* MOBILE */
+@media (max-width: 700px){
+  .ref-card {grid-template-columns: 1fr;}
+  .ref-img {height: 180px;}
+  .container {padding-left: 20px;padding-right: 20px;}
+}
+  </style>
+
+
+  
+  <!-- ===================== -->
+  <!-- HTML (BODY)
+  <!-- ===================== -->
+
+</head>
+<body id="top">
+<header>
+  <div class="container nav">
+    <div class="brand" aria-label="APEX">
+      <a href="#top" class="brand-link" aria-label="Accueil APEX">
+        <img src="logo(2).png" alt="APEX — Expertise scientifique & technique" class="brand-logo">
+        <span class="brand-text">APEX</span>
+      </a>
+    </div>
+    <nav aria-label="Navigation principale" style="display:flex;gap:16px">
+      <a href="#expertises">Expertises</a>
+      <a href="#about">Présentation</a>
+      <a href="#references">Références</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <div class="container hero">
+    <div class="hero-grid">
+      <!-- Colonne gauche : logo très visible sur fond blanc -->
+      <div class="hero-logo-card">
+        <!-- Remplace 'logo.png' par le nom réel de ton fichier dans le dépôt si besoin -->
+        <img class="hero-logo" src="logo.png" alt="APEX — Expertise scientifique & technique">
+      </div>
+
+      <!-- Colonne droite : texte blanc sur fond bleu -->
+      <div>
+        <h1>Cabinet d’Expertises Scientifiques &amp; Techniques</h1>
+        <p class="lead">
+          Environnement • Écotoxicologie • Sanitaire • Ressources aquatiques • Recherche appliquée
+        </p>
+        <div class="hero-separator"></div>
+        <p class="hero-intro">
+          Accompagne les acteurs publics et privés dans le diagnostic, le suivi et la gestion des enjeux environnementaux et des ressources naturelles.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:tgardon.apex@gmail.com"><img src="devis.png" alt="" class="icon"> Discuter de votre projet</a>
+          <a class="btn ghost" href="tel:+68987369491"><img src="telephone-call.png" alt="" class="icon"> (+689) 87&nbsp;36&nbsp;94&nbsp;91</a>
+        </div>
+        <div class="pill" aria-label="Mots clés">
+         <span>Diagnostic environnemental</span>
+          <span>Suivi & surveillance</span>
+          <span>Analyse de données</span>
+          <span>Aide à la décision</span>
+          <span>Valorisation scientifique</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+  
+<!-- ===================== -->
+<!-- EXPERTISES -->
+<!-- ===================== -->
+  
+<main>
+ <section class="container" id="expertises">
+  <h2>Expertises</h2>
+   <p class="subtle">
+  Des expertises complémentaires au service de l'environnement, des ressources naturelles et des systèmes de production.
+</p>
+
+   <div class="grid cols-2">
+     
+     <article class="card expertise-card">
+       <img class="sector-img" src="assets/secteurs/diagnostic.png" alt="">
+       <h3>
+         <img src="loupe.jpg" alt="" class="icon">Diagnostic & surveillance environnementale</h3>
+       <ul class="clean">
+        <li>Qualité des milieux (eaux, sédiments, biote)</li>
+        <li>Pollution et contamination environnementale (pesticides, métaux lourds, macro- et microplastiques, etc.)</li>
+        <li>Suivi physico-chimique et dispositifs de surveillance</li>
+        <li>Évaluation des risques environnementaux et sanitaires</li>
+       </ul>
+     </article>
+
+    <article class="card expertise-card">
+       <img class="sector-img" src="assets/secteurs/recherche.png" alt="">
+       <h3>
+         <img src="microscope.jpg" alt="" class="icon">Recherche appliquée & expertise scientifique</h3>
+      <ul class="clean">
+        <li>Conception de protocoles expérimentaux</li>
+        <li>Analyse et interprétation de données</li>
+        <li>Modélisation, statistiques, SIG et bioinformatique</li>
+        <li>Valorisation scientifique et transfert de connaissances (rapports, publications, aide à la décision)</li>
+      </ul>
+    </article>
+
+    <article class="card expertise-card">
+       <img class="sector-img" src="assets/secteurs/aquaculture.jpg" alt="">
+       <h3>
+         <img src="fish.jpg" alt="" class="icon"> Ressources aquatiques & systèmes de production</h3>
+      <ul class="clean">
+        <li>Gestion et suivi des écosystèmes aquatiques</li>
+        <li>Aquaculture et systèmes d'élevage</li>
+        <li>Pêche et ressources halieutiques</li>
+        <li>Diagnostic et optimisation des systèmes de production</li>
+      </ul>
+    </article>
+
+    <article class="card expertise-card">
+       <img class="sector-img" src="assets/secteurs/aquariology.png" alt="">
+       <h3>
+         <img src="ecosystem.jpg" alt="" class="icon"> Création d'écosystèmes aquatiques</h3>
+      <ul class="clean">
+        <li>Aquariums et paludariums sur mesure</li>
+        <li>Aquascaping, biotopes et décors naturels</li>
+        <li>Conception, installation et maintenance</li>
+        <li>Aménagements pour espaces professionnels et privés (hôtels, restaurants, entreprises et particuliers)</li>
+      </ul>
+      <a class="aquario-link" href="URL-DE-TON-SITE-AQUARIOLOGIE" target="_blank" rel="noopener">
+  Découvrir APEX — Aquariologie →
+      </a>
+    </article>
+     
+   </div>
+   
+</section>   
+  
+  
+  <!-- ===================== -->
+  <!-- PRESENTATION -->
+  <!-- ===================== -->
+  
+  <section class="container" id="about">
+  <h2>Présentation</h2>
+  <div class="about-grid">
+    <div>
+      <p><strong>APEX</strong> est un cabinet d’expertises scientifiques et techniques basé en Polynésie française, fondé en 2026. Il accompagne les acteurs publics, institutionnels et privés dans la production, 
+        l’analyse et la valorisation de données scientifiques, afin de fiabiliser les diagnostics, objectiver les enjeux et éclairer la décision.</p>
+      <p>À l’interface entre recherche académique et réalités de terrain, APEX couvre l’ensemble de la chaîne de production de la donnée : conception de protocoles, déploiement de dispositifs d’échantillonnage 
+        <em>in situ</em>, traitement et analyse de données environnementales ou biologiques, jusqu’à leur interprétation et la production de livrables directement mobilisables. Cette approche intégrée garantit la 
+        cohérence méthodologique et la robustesse des résultats.</p>
+      <p>Le cabinet développe des approches analytiques rigoureuses, spécifiquement adaptées aux contraintes opérationnelles des milieux insulaires et tropicaux. Il s’appuie sur une expertise avancée en écologie marine,
+        écotoxicologie et systèmes aquatiques, ainsi que sur une maîtrise des outils statistiques, de la bioinformatique et de la cartographie, permettant de traiter des jeux de données complexes et multi-échelles.</p>
+      <p>APEX se distingue par sa capacité à transformer des données scientifiques complexes en outils d’aide à la décision clairs et directement exploitables. Cette capacité repose sur une double exigence : un haut 
+        niveau de rigueur scientifique et une compréhension fine des contraintes techniques, logistiques et réglementaires propres aux contextes d’intervention.</p>
+      <p>Piloté par le Dr. Tony Manutea GARDON, docteur en biologie des populations et écologie, le cabinet s’appuie sur plus de dix années d’expérience en recherche et en R&D appliquée. Ses travaux couvrent la 
+        conduite de projets scientifiques, la production de publications internationales, ainsi que la conception et la mise en œuvre d’expérimentations en conditions contrôlées et <em>in situ</em>, jusqu’à leur 
+        transfert vers des applications opérationnelles. Son parcours, à l’interface entre production aquacole, écotoxicologie et suivi environnemental, lui confère une capacité d’analyse transversale, allant de 
+        la compréhension des systèmes et processus à leur traduction en actions concrètes.</p>
+      <p>Fort d’un ancrage local solide et d’une connaissance fine des environnements polynésiens, APEX s’appuie sur un réseau opérationnel multi-acteurs (institutions, laboratoires, partenaires techniques), lui 
+        permettant d’intervenir de manière réactive, adaptée et efficace sur des problématiques complexes.</p>
+      </div>
+    
+    <aside class="about-card">
+      <img class="about-img" src="apex-portrait.jpg" alt="APEX — Expertise scientifique & technique">
+      <div class="about-facts">
+        <div class="name">Dr. Tony Manutea GARDON</div>
+        <div class="role">Fondateur & Directeur scientifique — APEX</div>
+        <div class="spec"><strong>Spécialités</strong> : Biologie &amp; Écologie • Écotoxicologie • Écophysiologie • Aquaculture &amp; Aquariologie</div>
+        <div class="spec"><img src="orcid-logo.png" alt="" class="icon"><strong>ORCID</strong> : 0000-0002-5761-0526</div>
+        <div class="sep"></div>
+        <div class="kv">
+          <div class="kv-title">
+            <img src="graduation.png" alt="" class="icon"><strong>Formations</strong>
+          </div>
+          <ul class="kv-list">
+            <li>Doctorat en Sciences — Biologie des Populations &amp; Écologie</li>
+            <li>Master en Sciences des Environnements Continentaux &amp; Côtiers</li>
+            <li>Licence Professionnelle en Aquaculture &amp; Aquariologie</li>
+            <li>BTSA Aquaculture</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </div>
+  </section>
+
+  
+  <!-- ===================== -->
+  <!-- REFERENCES -->
+  <!-- ===================== -->
+  
+  <section class="container" id="references">
+  <h2>Références</h2>
+
+<div class="grid cols-2 ref-grid">
+  
+  <!-- SCIESTA -->
+  <article class="card ref-card">
+    <img class="ref-img" src="assets/references/sciesta.jpg" alt="Recherche UPF">
+    <div class="ref-content">
+      <div class="ref-logos">
+      <img src="assets/references/logos/upf.png" alt="UPF">
+      <img src="assets/references/logos/secopol.png" alt="SECOPOL">
+    </div>
+    <h3>2023–2025 — UPF/UMR SECOPOL  ǀ  Projet SCIESTA — Dimensionnement d’un réseau de surveillance des contaminants d'intérêt émergent aux embouchures des rivières de Tahiti</h3>
+    <details>
+      <summary>Voir plus</summary>
+      <p>
+      Le projet SCIESTA visait le dimensionnement dʼun réseau de surveillance environnementale dédié aux contaminants d'intérêt émergent (microplastiques, métaux lourds et polluants organiques persistants, 
+      incluant les pesticides) au niveau des zones d’embouchure du continuum terre–mer sur l’île de Tahiti, incluant leur évaluation dans les compartiments sédimentaires marins. Le projet 
+      s’inscrivait dans une démarche de structuration méthodologique fondée sur l’analyse des pressions anthropiques, la représentativité environnementale des sites et la comparabilité spatiale des dispositifs de suivi.
+      </p>
+    </details>
+    </div>
+  </article>
+
+    <!-- Enseignement -->
+  <article class="card ref-card">
+    <img class="ref-img" src="assets/references/teaching.jpg" alt="Enseignement UPF">
+    <div class="ref-content">
+      <div class="ref-logos">
+      <img src="assets/references/logos/upf.png" alt="UPF">
+    </div>
+    <h3>2023–2025 — UPF  ǀ  Enseignements à l'Université de la Polynésie française auprès d’étudiants de L2 et L3 parcours Sciences et Vie</h3>
+    <details>
+    <summary>Voir plus</summary>
+      <p>
+      Unités d'enseignement dispensées : biochimie des macromolécules, écotoxicologie, écosystèmes marins, exploitation des ressources naturelles, gestion des écosystèmes, stratégies d’échantillonnage.
+      </p>
+    </details>
+    </div>
+  </article>
+  
+  <!-- CORAIL -->
+  <article class="card ref-card">
+    <img class="ref-img" src="assets/references/corail.jpg" alt="Ouvrage scientifique récifs coralliens">
+    <div class="ref-content">
+      <div class="ref-logos">
+      <img src="assets/references/logos/ephe.png" alt="EPHE">
+      <img src="assets/references/logos/criobe.jpg" alt="CRIOBE">
+    </div>
+    <h3>2023 — EPHE/CRIOBE  ǀ  Contribution à un ouvrage scientifique</h3>
+    <details>
+      <summary>Voir plus</summary>
+      <p>
+      Valorisation de plus de dix années de recherche menées dans le cadre du LABEX CORAIL « les récifs coralliens face au changement global » — Rédaction du chapitre 6 : « Vulnérabilité des récifs coralliens 
+      face aux contaminants d'intérêt émergent » dans <em>The Future of Coral Reefs</em>, ouvrage de la série <em>Coral Reefs of the World</em> (Springer Nature). Ce travail avait pour objectifs la synthèse 
+      scientifique orientée vers les recherches futures et le transfert de connaissances au service des stratégies de gestion des écosystèmes coralliens.
+      </p>
+    </details>
+    </div>
+  </article>
+  
+  <!-- TIPTOP -->
+  <article class="card ref-card">
+    <img class="ref-img" src="assets/references/tiptop.jpg" alt="Projet TIPTOP — contamination thon">
+    <div class="ref-content">
+      <div class="ref-logos">
+      <img src="assets/references/logos/ird.png" alt="IRD">
+      <img src="assets/references/logos/lemar.png" alt="LEMAR">
+      <img src="assets/references/logos/cps.png" alt="CPS">
+    </div>
+    <h3>2022 — IRD/UMR LEMAR  ǀ  Projet TIPTOP — Évaluation de la contamination micro/nanoplastique et chimique chez le thon jaune et la bonite de l'Océan Pacifique Sud </h3>
+    <details>
+      <summary>Voir plus</summary>
+      <p>
+      Le projet TIPTOP, co-financé par lʼIRD et la Communauté du Pacifique (CPS), visait à évaluer la contamination par les micro/nanoplastiques et les contaminants chimiques 
+      (additifs plastiques et métaux lourds) chez des espèces pélagiques d'intérêt halieutique majeur — la bonite (<em>Katsuwonus pelamis</em>) et le thon jaune (<em>Thunnus albacares</em>) 
+      — dans le Pacifique Sud, en Papouasie-Nouvelle-Guinée et en Nouvelle-Calédonie. Ce travail répondait à une double problématique : un enjeu sanitaire, compte tenu de la 
+      forte consommation de ces espèces dans le Pacifique, et un enjeu de durabilité des ressources, lié aux risques écotoxicologiques susceptibles d’affecter les populations 
+      exploitées. Le projet reposait sur la mise en œuvre de chaînes analytiques complexes appliquées à des matrices biologiques, intégrant des contraintes méthodologiques et analytiques élevées.
+      </p>
+    </details>
+    </div>
+  </article>
+  
+  <!-- PLASTICOR -->
+  <article class="card ref-card">
+    <img class="ref-img" src="assets/references/plasticor.jpg" alt="Projet PLASTICOR — microbiomes récifaux">
+    <div class="ref-content">
+      <div class="ref-logos">
+      <img src="assets/references/logos/ephe.png" alt="EPHE">
+      <img src="assets/references/logos/criobe.jpg" alt="CRIOBE">
+    </div>
+    <h3>2021 — EPHE/CRIOBE  ǀ  Projet PLASTICOR — Étude de la variabilité spatio-saisonnière du microbiome d'organismes récifaux le long d'un grandient d'anthropisation</h3>
+    <details>
+      <summary>Voir plus</summary>
+      <p>
+      Le projet PLASTICOR visait à caractériser l’état de santé des écosystèmes récifaux à travers une approche multi-espèces, basée sur des outils de métabarcoding. L’étude a été conduite dans 
+      le lagon de Ahe (Tuamotu), le long d’un gradient d’anthropisation lié à l’intensité de l’activité perlicole. Le dispositif expérimental reposait sur une structuration spatiale fine des sites d’étude et 
+      sur la prise en compte de la variabilité saisonnière, afin de relier les signatures physico-chimiques et biologiques — incluant le microbiome associé aux coraux (<em>Acropora millepora</em>), 
+      poissons (<em>Dascyllus aruanus</em>) et huîtres (<em>Pinctada margaritifera</em>), ainsi que l’ADNe de l’eau de mer — aux usages et pressions exercés sur le milieu. Ces travaux ont mis en évidence une 
+      dégradation spatio-saisonnière des microbiotes en zones de perliculture, associée à des signatures physico-chimiques de l'eau, indiquant un état écologique altéré et des taxons bioindicateurs potentiels.
+      </p>
+    </details>
+    </div>
+  </article>
+  
+  <!-- MICROLAG -->
+  <article class="card ref-card">
+    <img class="ref-img" src="assets/references/microlag.jpg" alt="Projet MICROLAG — microplastiques lagon">
+    <div class="ref-content">
+      <div class="ref-logos">
+      <img src="assets/references/logos/ifremer.png" alt="IFREMER">
+      <img src="assets/references/logos/secopol.png" alt="SECOPOL">
+      <img src="assets/references/logos/drm.jpg" alt="DRM">
+    </div>
+    <h3>2017–2020 — IFREMER/UMR SECOPOL  ǀ  Projet MICROLAG — Évaluation de la contamination en microplastiques dans les lagons polynésiens et de leurs impacts sur l'huître perlière</h3>
+    <details>
+      <summary>Voir plus</summary>
+      <p>
+      Le projet MICROLAG, cofinancé par la Direction des Ressources Marines (DRM) et l’IFREMER, visait à caractériser pour la première fois la contamination en microplastiques dans les lagons perlicoles de 
+      Polynésie française et à en évaluer les impacts biologiques et fonctionnels sur l’huître perlière (<em>Pinctada margaritifera</em>) et la qualité de la perle, dans un contexte d’accumulation historique 
+      de structures plastiques liées à la perliculture. L’étude s’est appuyée sur des campagnes d’échantillonnage multi-sites (eau de surface, colonne d’eau, huîtres) menées dans cinq lagons (Ahe, Manihi, 
+      Takaroa, Takapoto, Mangareva), révélant une contamination généralisée. Des expérimentations contrôlées ont mis en évidence des effets significatifs des micro/nanoplastiques sur la physiologie des 
+      huîtres, ainsi que sur la qualité de la perle <em>via</em> des altérations de la microstructure nacrière. En parallèle, une approche toxicologique a démontré le potentiel de lixiviation des plastiques 
+      perlicoles, avec une désorption significative d’additifs, entraînant des effets délétères sur le développement embryo-larvaire de <em>P. margaritifera</em>. Ces résultats indiquent que les structures 
+      plastiques en perliculture constituent des sources actives de micro/nanoplastiques et de contaminants chimiques dans les lagons. Les travaux ont donné lieu à plusieurs publications de référence en 
+      écotoxicologie des microplastiques, ainsi qu’à la mise au point de protocoles expérimentaux robustes et innovants, repris par des équipes partenaires. Ils ont également contribué à la réflexion 
+      institutionnelle sur l’usage des plastiques en perliculture, participant à l’émergence de mesures réglementaires et de projets visant à réduire l’empreinte environnementale du secteur.
+    </p>
+    </details>
+    </div>
+  </article>
+
+    <!-- STAGE MASTER1 -->
+  <article class="card ref-card">
+    <img class="ref-img" src="assets/references/master.jpg" alt="Projet MASTER">
+    <div class="ref-content">
+      <div class="ref-logos">
+      <img src="assets/references/logos/ucn.png" alt="UCN">
+      <img src="assets/references/logos/borea.png" alt="BOREA">
+    </div>
+    <h3>2016 — UCN/UMR BOREA  ǀ  Mise en place de la gonade au cours du développement de l’huître creuse</h3>
+    <details>
+      <summary>Voir plus</summary>
+      <p>
+      L’huître creuse (<em>Crassostrea gigas</em>), hermaphrodite successif, initie son déterminisme sexuel dès le stade juvénile post-métamorphose, bien que les mécanismes cellulaires associés restent encore 
+      mal connus. Ce travail visait à identifier les cellules germinales primordiales (CGP) chez des juvéniles précoces et à caractériser la différenciation gonadique à des stades plus avancés. L’expression 
+      de la protéine NANOS (marqueur des CGP), étudiée en immunofluorescence après mise au point du protocole, a révélé un marquage cytoplasmique en amas cellulaires proches de la masse viscérale, suggérant 
+      la présence de CGP. L’immunohistochimie (NANOS, β-caténine) a montré leur expression dans les cellules gonadiques précoces et différenciées, avec une implication de la β-caténine dans la différenciation ovarienne.
+      Malgré la nécessité d’optimisations complémentaires, ce travail a permis de mieux comprendre la mise en place de la gonade chez les juvéniles et les mécanismes cellulaires du déterminisme sexuel, contribuant 
+      à l’amélioration des connaissances en biologie et en ostréiculture.
+      </p>
+    </details>
+    </div>
+  </article>
+
+       <!-- PROJET PRO -->
+  <article class="card ref-card">
+    <img class="ref-img" src="assets/references/projetpro.jpg" alt="Projet PRO">
+    <div class="ref-content">
+       <div class="ref-logos">
+      <img src="assets/references/logos/drm.jpg" alt="DRM">
+    </div>
+    <h3>2015 — DRM  ǀ  Projet pilote — Première ferme d'élevage de <em>Chanos chanos</em> en Polynésie française sur l'atoll de Rangiroa</h3>
+    <details>
+      <summary>Voir plus</summary>
+      <p> 
+      Malgré un potentiel reconnu pour le développement de l’aquaculture locale, le Ava (<em>Chanos chanos</em>) ne fait l’objet d’aucune production en Polynésie française. Ce travail visait à poser 
+      les bases d’un projet pilote de ferme aquacole, en intégrant à la fois les connaissances biologiques de l’espèce, ses modalités d’élevage et les contraintes techniques et économiques associées. Le projet, 
+      localisé sur l’atoll de Rangiroa, reposait sur une stratégie de grossissement en lagon afin de limiter la pression foncière et de réduire les coûts liés à l’alimentation. L’analyse technico-économique a 
+      permis de structurer un business plan détaillé, mettant en évidence une rentabilité dès la deuxième année, sous réserve d’une production minimale d’environ 20 tonnes par an. Toutefois, l’absence d’étude de 
+      marché limitait les perspectives de développement à moyen terme. Ce travail a néanmoins constitué une première base opérationnelle pour le déploiement d’une filière d’élevage de <em>Chanos chanos</em> en 
+      Polynésie française.
+      </p>
+    </details>
+    </div>
+  </article>
+      
+      <!-- STAGE LP -->
+  <article class="card ref-card">
+    <img class="ref-img" src="assets/references/lp.jpg" alt="Projet LP">
+    <div class="ref-content">
+      <div class="ref-logos">
+      <img src="assets/references/logos/drm.jpg" alt="DRM">
+    </div>
+    <h3>2015 — DRM  ǀ  Géniteurs de Paraha peue : un levier clé pour l’optimisation de la pisciculture polynésienne — Analyse des performances de ponte et optimisation de l’incubation des œufs</h3>
+    <details>
+      <summary>Voir plus</summary>
+      <p> 
+      Ce travail s’articulait autour de deux objectifs : (1) la structuration d’une base de données centralisant l’ensemble des pontes de <em>Platax orbicularis</em> depuis 2004, afin d’identifier les facteurs influençant 
+      les performances reproductives, et (2) le développement d’une méthode d’incubation des œufs permettant d’estimer de manière fiable le taux d’éclosion tout en limitant les manipulations au démarrage des 
+      élevages larvaires. La base de données, construite à partir des archives de la DRM, a permis de mettre en évidence une amélioration des performances de ponte avec l’âge des géniteurs, ainsi qu’un 
+      sexe-ratio optimal. En parallèle, la comparaison de plusieurs méthodes d’incubation a permis d’identifier une approche innovante d’incubation indirecte « jumelée », combinant les avantages des méthodes 
+      directe et indirecte. Les résultats ont montré que les protocoles de comptage étaient fiables, bien que des pertes non quantifiables en fin d’essai, probablement liées à la dégradation 
+      des œufs non éclos et des larves mortes, aient pu biaiser les estimations initiales. Ces travaux ont ainsi permis de mieux comprendre les déterminants des performances reproductives des géniteurs et de 
+      proposer des solutions opérationnelles pour améliorer la gestion des élevages larvaires en pisciculture de Paraha peue.
+      </p>
+    </details>
+    </div>
+  </article>
+
+        <!-- STAGE BTS2 -->
+  <article class="card ref-card">
+    <img class="ref-img" src="assets/references/bts2.jpg" alt="BTS2">
+    <div class="ref-content">
+       <div class="ref-logos">
+      <img src="assets/references/logos/aquapac.jpg" alt="AQUAPAC">
+    </div>
+    <h3>2013 — AQUAPAC  ǀ  Zootechnie et optimisation des pratiques d'élevage de la crevette bleue <em>Litopenaus stylirostris</em></h3>
+    <details>
+      <summary>Voir plus</summary>
+      <p> 
+      Ce travail s’inscrivait dans une immersion opérationnelle au sein de la filière crevetticole polynésienne, centré sur l’élevage de la crevette bleue (<em>Litopenaeus stylirostris</em>), réalisé chez AQUAPAC. Il 
+      visait à maîtriser les pratiques zootechniques mises en œuvre en conditions de production, ainsi que les dimensions économiques et financières associées à l’exploitation. Dans ce cadre, un projet d’optimisation 
+      a été conduit afin d’améliorer la rentabilité des systèmes d’élevage. Il s’est notamment appuyé sur une meilleure gestion de la période d’assec (travail des sols par hersage) et sur la mise en place d'un protocole 
+      d’acclimatation des post-larves issues de l’écloserie territoriale (VAIA) avant leur ensemencement en bassins. Ces travaux ont permis d’identifier des leviers concrets d’amélioration des performances de production, 
+      en renforçant à la fois la robustesse des pratiques zootechniques et l’efficacité globale du système d’élevage.
+      </p>
+    </details>
+    </div>
+  </article>
+
+  <!-- STAGE BTS1 & SAISONNIER -->
+  <article class="card ref-card">
+    <img class="ref-img" src="assets/references/bts1.jpg" alt="BTS1">
+    <div class="ref-content">
+       <div class="ref-logos">
+      <img src="assets/references/logos/gillardeau.png" alt="GILLARDEAU">
+    </div>
+    <h3>2012/2014 — GILLARDEAU  ǀ  Approche zootechnique en ostréiculture</h3>
+    <details>
+      <summary>Voir plus</summary>
+      <p> 
+      Expériences de terrain en ostréiculture, centrée sur l’observation et la compréhension des pratiques zootechniques mises en œuvre en conditions de production. Ces immersions ont permis d’appréhender l’ensemble 
+      des étapes de l’élevage de l’huître creuse (<em>Crassostrea gigas</em>), incluant le captage, le tri, la calibration, le grossissement, l’affinage, la dépuration et les phases de commercialisation. Elles ont 
+      contribué au développement d’une lecture intégrée des systèmes de production, articulant contraintes biologiques, techniques et économiques, et constituent un socle opérationnel essentiel pour l’analyse et 
+      l’optimisation des pratiques ostréicoles.
+      </p>
+    </details>
+    </div>
+  </article>
+  
+</div>
+      
+      <!-- Publications scientifiques -->
+      <h3 class="about-sub">Publications scientifiques</h3>
+<ul class="about-bullets pub-list">
+  <li>
+    <span class="pub-year">2025</span>
+    — <strong>Gardon T.</strong>, Dromard C.R., Gaertner J.-C., Gaertner-Mazouni N.
+    <em>Vulnerability of Coral Reefs to Contaminants of Emerging Concern</em>, In: The Future of Coral Reefs, Coral Reefs of the World.
+    <span class="pub-venue">Springer Nature</span>.
+    <a href="https://doi.org/10.1007/978-3-031-98584-3_6" target="_blank" rel="noopener">DOI</a>
+  </li>
+
+  <li>
+    <span class="pub-year">2024</span>
+    — Crusot M., <strong>Gardon T.</strong>, Richmond T., Jezequel R., Barbier E., Gaertner-Mazouni N.
+    <em>Chemical toxicity of synthetic and natural-based spat collector on the embryo-larval development of the pearl oyster Pinctada margaritifera</em>.
+    <span class="pub-venue">Journal of Hazardous Materials</span>.
+    <a href="https://doi.org/10.1016/j.jhazmat.2024.135647" target="_blank" rel="noopener">DOI</a>
+  </li>
+
+  <li>
+    <span class="pub-year">2024</span>
+    — <strong>Gardon T.</strong>, Le Luyer J., Le Moullac G., Soyez C., Lagarde F., Dehaut A., Paul-Pont I., Huvet A.
+    <em>Pearl Farming Micro-Nanoplastics Affect Oyster Physiology and Pearl Quality</em>.
+    <span class="pub-venue">Environmental Science &amp; Technology</span>.
+    <a href="https://doi.org/10.1021/acs.est.3c06684" target="_blank" rel="noopener">DOI</a>
+  </li>
+
+  <li>
+    <span class="pub-year">2022</span>
+    — <strong>Gardon T.</strong>, Paul-Pont I., Le Moullac G., Soyez C., Lagarde F., Huvet A.
+    <em>Cryogrinding and sieving techniques as challenges towards producing controlled size range microplastics for relevant ecotoxicological tests</em>.
+    <span class="pub-venue">Environmental Pollution</span>.
+    <a href="https://doi.org/10.1016/j.envpol.2022.120383" target="_blank" rel="noopener">DOI</a>
+  </li>
+
+  <li>
+    <span class="pub-year">2021</span>
+    — <strong>Gardon T.</strong>, El Rakwe M., Paul-Pont I., Le Luyer J., Thomas L., Prado E., Kada B., Cassone A-L., Quillien V., Soyez C., Costes L., Crusot M., Dreanno C., Le Moullac G., Huvet A.
+    <em>Microplastics contamination in pearl-farming lagoons of French Polynesia</em>.
+    <span class="pub-venue">Journal of Hazardous Materials</span>.
+    <a href="https://doi.org/10.1016/j.jhazmat.2021.126396" target="_blank" rel="noopener">DOI</a>
+  </li>
+
+  <li>
+    <span class="pub-year">2020</span>
+    — <strong>Gardon T.</strong>, Morvan L., Huvet A., Quillien V., Soyez C., Le Moullac G., Le Luyer J.
+    <em>Microplastics induce dose-specific transcriptomic disruptions in energy metabolism and immunity of the pearl oyster Pinctada margaritifera</em>.
+    <span class="pub-venue">Environmental Pollution</span>.
+    <a href="https://doi.org/10.1016/j.envpol.2020.115180" target="_blank" rel="noopener">DOI</a>
+  </li>
+
+  <li>
+    <span class="pub-year">2020</span>
+    — <strong>Gardon T.</strong>, Huvet A., Paul-Pont I., Cassone A-L., Sham Koua M., Soyez C., Jezequel R., Receveur J., Le Moullac G.
+    <em>Toxic effects of leachates from plastic pearl-farming gear on embryo-larval development in the pearl oyster Pinctada margaritifera</em>.
+    <span class="pub-venue">Water Research</span>.
+    <a href="https://doi.org/10.1016/j.watres.2020.115890" target="_blank" rel="noopener">DOI</a>
+  </li>
+
+  <li>
+    <span class="pub-year">2018</span>
+    — <strong>Gardon T.</strong>, Reisser C., Soyez C., Quillien V., Le Moullac G.
+    <em>Microplastics Affect Energy Balance and Gametogenesis in the Pearl Oyster Pinctada margaritifera</em>.
+    <span class="pub-venue">Environmental Science &amp; Technology</span>.
+    <a href="https://doi.org/10.1021/acs.est.8b00168" target="_blank" rel="noopener">DOI</a>
+  </li>
+</ul>
+</section>
+
+  <section class="container contact" id="contact">
+    <div>
+      <h2>Contact</h2>
+      <p>Décrivez votre besoin — vous recevez un cadrage et un devis.</p>
+      <div class="box">
+        <strong>Email :</strong> <a href="mailto:tgardon.apex@gmail.com">tgardon.apex@gmail.com</a><br>
+        <strong>Téléphone :</strong> <a href="tel:+68987369491">+689 87&nbsp;36&nbsp;94&nbsp;91</a><br>
+        <strong>N° TAHITI :</strong> G64935<br>
+        <strong>Base :</strong> Polynésie française — interventions sur site &amp; à distance, en local, en métropole et à l’international.
+      </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div>&copy; APEX — GARDON Tony Manutea </div>
+  </div>
+</footer>
+</body>
+</html>
