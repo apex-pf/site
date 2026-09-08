@@ -16,13 +16,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
 
-
   <!-- ===================== -->
   <!-- CSS (STYLE)
   <!-- ===================== -->
   
   <style>
-    /* Palette : #2900E5 (plus foncé) → blanc */
+    /* Palette APEX */
     :root{
       --brand:#2900E5;          /* bleu le plus foncé utilisé */
       --brand-600:#5A48F0;      /* bleu intermédiaire */
@@ -39,11 +38,7 @@
     .container{max-width:1400px;margin:0 auto;padding:0 20px}
 
     /* Header */
-    header{
-  color:#fff;
-  background:var(--brand);
-    }
-
+    header{color:#fff;background:var(--brand);}
     .nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:18px 0}
     .icon {width: 20px;height: 20px;vertical-align: -3px;margin-right: 6px;}
     
@@ -52,13 +47,13 @@
     .brand .mark{display:none} /* on masque l'ancien carré si présent */
     .brand-link{display:flex;align-items:center;gap:10px;text-decoration:none}
     .brand-logo{height:40px;width:auto;display:block}
-    @media (min-width: 900px){ .brand-logo{height:38px} }
+    @media (min-width: 900px){ .brand-logo{height:40px} }
     .brand-text{
       font-size: clamp(24px, 3.2vw, 42px); /* ← augmente ici si tu veux encore plus grand */
       font-weight: 800;
       letter-spacing: .5px;
       color: #fff;
-      line-height: 1;} /* lisible sur fond blanc à gauche */
+      line-height: 1;}
 
     /* Navigation */
     nav[aria-label="Navigation principale"]{display:flex;gap:16px;margin-right:30px;}
@@ -66,17 +61,11 @@
     @media (max-width: 768px){.nav{flex-direction:column;gap:12px;}
                             nav[aria-label="Navigation principale"]{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;}}
 
-    /* HERO en 2 colonnes : logo à gauche (zone claire), texte blanc à droite (zone bleue) */
+    /* HERO en 2 colonnes : logo à gauche, texte à droite */
     .hero{padding:34px 0 60px}
     .hero-grid{display:grid;gap:22px;align-items:center}
     @media (min-width: 900px){.hero-grid{grid-template-columns: auto 2fr;align-items: center;}}
-
-    .hero h1{color:#fff;
-             font-size: clamp(26px, 3.6vw, 42px);
-             line-height: 1.15;
-             margin: 6px 0 8px;
-             font-weight: 800;}
-
+    .hero h1{color:#fff;font-size: clamp(26px, 3.6vw, 42px);line-height: 1.15;margin: 6px 0 8px;font-weight: 800;}
     .hero-separator{width:100%;max-width:830px;height:2px;background:rgba(255,255,255,.75);margin:28px 0 28px;}
     .hero-intro{color:#fff;font-size:clamp(15px,1.9vw,18px);line-height:1.5;max-width:830px;margin:14px 0 14px;opacity:.95;font-style:italic;text-align:justify;}
     .hero p.lead{color:#fff;font-size:clamp(16px,2vw,19px);line-height:1.5;max-width:830px;margin:0 0 14px;opacity:.95;}
@@ -88,20 +77,8 @@
     .pill span{background:rgba(255,255,255,.16);color:#fff;padding:6px 10px;border-radius:999px;font-size:16px}
 
     /* Bloc logo à gauche : fond blanc pour contraster un logo bleu */
-    .hero-logo-card{
-      background:#FFFFFF;
-      border:1px solid #E8EEF5;
-      border-radius:18px;
-      box-shadow:0 8px 24px rgba(0,0,0,.08);
-      padding:14px 14px;
-      display:flex;align-items:center;
-      min-height:160px;
-      margin:auto;
-    }
-    .hero-logo{
-      width: clamp(180px, 24vw, 320px);
-      height:auto; display:block;
-    }
+    .hero-logo-card{background:#FFFFFF;border:1px solid #E8EEF5;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.08);padding:14px 14px;display:flex;align-items:center;min-height:160px;margin:auto;}
+    .hero-logo{width: clamp(180px, 24vw, 320px);height:auto; display:block;}
 
     /* Style section "Présentation" */
     @media (min-width: 900px){
