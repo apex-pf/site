@@ -66,7 +66,6 @@
     .hero{padding:34px 0 60px}
     .hero-grid{display:grid;gap:22px;align-items:center}
     @media (min-width: 900px){.hero-grid{grid-template-columns: auto 2fr;align-items: center;}}
-
     .hero h1{color:#fff;font-size: clamp(26px, 3.6vw, 42px);line-height: 1.15;margin: 6px 0 8px;font-weight: 800;}
     .hero-separator{width:100%;max-width:830px;height:2px;background:rgba(255,255,255,.75);margin:28px 0 28px;}
     .hero-intro{color:#fff;font-size:clamp(15px,1.9vw,18px);line-height:1.5;max-width:830px;margin:14px 0 14px;opacity:.95;font-style:italic;text-align:justify;}
@@ -82,109 +81,65 @@
     .hero-logo-card{background:#FFFFFF;border:1px solid #E8EEF5;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.08);padding:14px 14px;display:flex;align-items:center;min-height:160px;margin:auto;}
     .hero-logo{width: clamp(180px, 24vw, 320px);height:auto; display:block;}
 
-    /* Style section "Présentation" */
-    @media (min-width: 900px){
-      .about-grid{display: grid; grid-template-columns: 2fr 1fr; gap: 24px; align-items: start;}}
-    .pub-list a{ color:var(--brand); text-decoration:underline; }
-    .about-card{background:#fff; border:1px solid #E8EEF5; border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.06); overflow:hidden;width: 100%;max-width: 380px; justify-self: end;}
-    .about-img{display:block;width:100%;height:380px;object-fit: cover;}
-    .about-facts{padding:14px 16px; display:grid; gap:8px; font-size:14px; color:#334155;}
-    .about-facts .name{font-weight:800; font-size:20px;}
-    .about-facts .role{color:#64748b; font-size:14px; margin-top:2px; }
-    .about-facts .spec{color:#334155; font-size:14px; margin-top:6px; }
-    .about-facts .sep{border-top:2px solid #E8EEF5; margin:10px 0;}
-    .about-facts .kv{font-size:14px; color:#334155;}
-    .about-facts .kv strong{ color:#0F172A;}
-    .kv-title {display: flex;align-items: center;gap: 6px;margin-bottom: 6px;}
-    .kv-list {margin: 0;padding-left: 18px;}
-    
-    /* Sous-titre de section dans #about */
-    .about-sub{margin: 14px 0 8px;font-size: 18px;font-weight: 500; margin: 40px 0 8px; color: var(--brand);}
-    .pub-list{ font-size: 13px; }
-    .pub-list .pub-year{display:inline-block; min-width:3.5ch; margin-right:2px;font-weight:400; color:var(--brand);}
-    .pub-list .pub-venue{ color:#64748b; }
-    .about-bullets.pub-list{padding-left:0; margin-left: 12px;margin-bottom: 0;}
-    .about-bullets.pub-list li{padding:6px 0; text-align: justify;}
-    .about-bullets.pub-list li::before{width:6px; height:6px; top:10px;box-shadow:0 0 0 2px rgba(41,0,229,.08);}
-
-    section{padding:56px 0}
-    #expertises{ padding-top: 60px;}
-    #about{ padding-top: 60px;}
-    #about p {text-align: justify; }
-    #references{ padding-top: 60px;}
-    #contact{ padding-top: 60px;}
+    /* SECTIONS */
+    section{padding:60px 0}
 
     h2{color: var(--brand);font-size:clamp(22px,3vw,30px);margin:0 0 18px}
     .grid{display:grid;gap:18px}
-    @media(min-width:800px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
+    
+    @media(min-width:800px){
+      .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+      .grid.cols-2{grid-template-columns:repeat(2,1fr)}}
 
     .card{background:var(--card);border-radius:16px;padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.06);border:1px solid #E8EEF5}
     .card h3{margin:0 0 6px;font-size:20px}
+    
     ul.clean{list-style:none;padding:0;margin:10px 0 0}
     ul.clean li{padding:6px 0;color:var(--muted)}
     .sector-card{padding:0;overflow:hidden;}
     .sector-img{width:100%;height:140px;object-fit:cover;}
-    
-    #expertises .card{height:100%;}
-    #expertises .grid{align-items:stretch;}
-    .expertise-card{padding:0;overflow:hidden;}
-    .expertise-card h3{padding:16px 20px 0;margin:0;}
-    .expertise-card ul.clean{padding:0 20px 20px;margin-top:8px;}
-    .expertise-card ul.clean:has(+ .aquario-link) {padding-bottom: 2px;}
-
-    .aquario-link {display: block;width: fit-content;margin: 0 20px 16px auto;font-size: 14px;font-weight: 600;color: var(--brand);text-decoration: none;text-align: right;}
-    .aquario-link:hover {text-decoration: underline;}
-    
     .band{background:linear-gradient(180deg, var(--brand-100) 0%, #FFFFFF 100%);border-top:1px solid #EAF0FF;border-bottom:1px solid #EAF0FF}
-
-#expertises .subtle{color:#5B6B7A;font-style: italic;margin:-4px 0 24px;text-align:left;}
-@media (min-width: 768px){#expertises .subtle{text-align:justify;}}
+    .chip::before{ content:"• "; color:var(--brand); }
     
-
+    .contact{display:grid;gap:18px;align-items:center}
+    @media(min-width:860px){.contact{grid-template-columns: 1fr;}}
+    .box{background:#fff;border:1px solid #E8EEF5;border-radius:16px;padding:18px}
+    footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
     
-.chip::before{ content:"• "; color:var(--brand); }
-
-.contact{display:grid;gap:18px;align-items:center}
-@media(min-width:860px){.contact{grid-template-columns: 1fr;}}
-.box{background:#fff;border:1px solid #E8EEF5;border-radius:16px;padding:18px}
-footer{padding:32px 0 48px;color:#5b6b7a;font-size:14px;text-align:left}
-
-/* Bullets globales */
-ul.clean li {position: relative;padding-left: 22px;margin: 6px 0;line-height: 1.45;}
-ul.clean li::before {content: "";width: 6px;height: 6px;background: var(--muted);border-radius: 50%;position: absolute;left: 0;top: 0.85em;transform: none;}
-/* Exception : note */
-ul.clean li.note-ref::before {display: none;}
-ul.clean li.note-ref {padding-left: 0; margin-top: 16px;font-style: italic;color: var(--ink);font-size: 12.5px;line-height: 1.3;border-top: 1px solid rgba(0, 0, 0, 0.08);padding-top: 8px;}
-
+    /* Bullets globales */
+    ul.clean li {position: relative;padding-left: 22px;margin: 6px 0;line-height: 1.45;}
+    ul.clean li::before {content: "";width: 6px;height: 6px;background: var(--muted);border-radius: 50%;position: absolute;left: 0;top: 0.85em;transform: none;}
+    /* Exception : note */
+    ul.clean li.note-ref::before {display: none;}
+    ul.clean li.note-ref {padding-left: 0; margin-top: 16px;font-style: italic;color: var(--ink);font-size: 12.5px;line-height: 1.3;border-top: 1px solid rgba(0, 0, 0, 0.08);padding-top: 8px;}
     
-/* RÉFÉRENCES */
+    /* RÉALISATIONS */
+    .ref-grid {display: grid;grid-template-columns: 1fr;gap: 18px;}
+    /* Carte */
+    .ref-card {display: flex;flex-direction: column;overflow: hidden;padding: 0;}
+    /* Image */
+    .ref-img {width: 100%;height: 180px;object-fit: cover;}
+    /* Contenu */
+    .ref-content {display: flex;flex-direction: column;padding-bottom: 10px;}
+    /* Logos */
+    .ref-logos {display: flex;gap: 12px;align-items: center;padding: 12px 16px 4px;flex-wrap: wrap;}
+    .ref-logos img {height: 26px;width: auto;object-fit: contain;opacity: 0.9;}
+    /* Titre */
+    .ref-card h3 {padding: 8px 16px;margin: 0;font-size: 16px;}
+    /* Texte */
+    .ref-card p {padding: 0 16px 10px;margin: 0;font-size: 14px;color: var(--muted);line-height: 1.5;}
+    /* Détails */
+    details {padding-bottom: 10px;}
+    details summary {cursor: pointer;font-size: 13px;color: var(--brand);font-weight: 600;padding: 0 16px;}
     
-.ref-grid {display: grid;grid-template-columns: 1fr;gap: 18px;}
-/* Carte */
-.ref-card {display: flex;flex-direction: column;overflow: hidden;padding: 0;}
-/* Image */
-.ref-img {width: 100%;height: 180px;object-fit: cover;}
-/* Contenu */
-.ref-content {display: flex;flex-direction: column;padding-bottom: 10px;}
-/* Logos */
-.ref-logos {display: flex;gap: 12px;align-items: center;padding: 12px 16px 4px;flex-wrap: wrap;}
-.ref-logos img {height: 26px;width: auto;object-fit: contain;opacity: 0.9;}
-/* Titre */
-.ref-card h3 {padding: 8px 16px;margin: 0;font-size: 16px;}
-/* Texte */
-.ref-card p {padding: 0 16px 10px;margin: 0;font-size: 14px;color: var(--muted);line-height: 1.5;}
-/* Détails */
-details {padding-bottom: 10px;}
-details summary {cursor: pointer;font-size: 13px;color: var(--brand);font-weight: 600;padding: 0 16px;}
-
-/* MOBILE */
-@media (max-width: 700px){
-  .ref-card {grid-template-columns: 1fr;}
-  .ref-img {height: 180px;}
-  .container {padding-left: 20px;padding-right: 20px;}
-}
+    /* MOBILE */
+    @media (max-width: 700px){
+      .ref-card {grid-template-columns: 1fr;}
+      .ref-img {height: 180px;}
+      .container {padding-left: 20px;padding-right: 20px;}
+    }
+  
   </style>
-
 
   
   <!-- ===================== -->
@@ -195,16 +150,17 @@ details summary {cursor: pointer;font-size: 13px;color: var(--brand);font-weight
 <body id="top">
 <header>
   <div class="container nav">
-    <div class="brand" aria-label="APEX">
-      <a href="#top" class="brand-link" aria-label="Accueil APEX">
-        <img src="logo(2).png" alt="APEX — Expertise scientifique & technique" class="brand-logo">
+    <div class="brand" aria-label="APEX — Aquariologie">
+      <a href="#top" class="brand-link" aria-label="Accueil APEX — Aquariologie">
+        <img src="logo-APEX.jpg" alt="APEX — Aquariologie" class="brand-logo">
         <span class="brand-text">APEX</span>
       </a>
     </div>
     <nav aria-label="Navigation principale" style="display:flex;gap:16px">
-      <a href="#expertises">Expertises</a>
-      <a href="#about">Présentation</a>
-      <a href="#references">Références</a>
+       <a href="#prestations">Prestations</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#approche">Notre approche</a>
+      <a href="#about">À propos</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -214,29 +170,29 @@ details summary {cursor: pointer;font-size: 13px;color: var(--brand);font-weight
       <!-- Colonne gauche : logo très visible sur fond blanc -->
       <div class="hero-logo-card">
         <!-- Remplace 'logo.png' par le nom réel de ton fichier dans le dépôt si besoin -->
-        <img class="hero-logo" src="logo.png" alt="APEX — Expertise scientifique & technique">
+        <img class="hero-logo" src="../assets/logo.png" alt="APEX — Aquariologie">
       </div>
 
       <!-- Colonne droite : texte blanc sur fond bleu -->
       <div>
-        <h1>Cabinet d’Expertises Scientifiques &amp; Techniques</h1>
+        <h1>Création d’écosystèmes aquatiques</h1>
         <p class="lead">
-          Environnement • Écotoxicologie • Sanitaire • Ressources aquatiques • Recherche appliquée
+          Aquariums • Paludariums • Aquascaping • Biotopes naturels
         </p>
         <div class="hero-separator"></div>
         <p class="hero-intro">
-          Accompagne les acteurs publics et privés dans le diagnostic, le suivi et la gestion des enjeux environnementaux et des ressources naturelles.
+          Conception, installation et entretien d’écosystèmes aquatiques sur mesure pour les particuliers et les professionnels en Polynésie française.
         </p>
         <div class="cta">
-          <a class="btn primary" href="mailto:tgardon.apex@gmail.com"><img src="devis.png" alt="" class="icon"> Discuter de votre projet</a>
-          <a class="btn ghost" href="tel:+68987369491"><img src="telephone-call.png" alt="" class="icon"> (+689) 87&nbsp;36&nbsp;94&nbsp;91</a>
+          <a class="btn primary" href="mailto:tgardon.apex@gmail.com"><img src="../assets/devis.png" alt="" class="icon"> Discuter de votre projet</a>
+          <a class="btn ghost" href="tel:+68987369491"><img src="../assets/telephone-call.png" alt="" class="icon"> (+689) 87&nbsp;36&nbsp;94&nbsp;91</a>
         </div>
-        <div class="pill" aria-label="Mots clés">
-         <span>Diagnostic environnemental</span>
-          <span>Suivi & surveillance</span>
-          <span>Analyse de données</span>
-          <span>Aide à la décision</span>
-          <span>Valorisation scientifique</span>
+        <div class="pill" aria-label="Prestations">
+          <span>Conception sur mesure</span>
+          <span>Aquascaping</span>
+          <span>Installation</span>
+          <span>Maintenance</span>
+          <span>Conseil & suivi</span>
         </div>
       </div>
     </div>
