@@ -121,6 +121,9 @@
       .grid.cols-3{grid-template-columns:repeat(3,1fr);}
       .grid.cols-2{grid-template-columns:repeat(2,1fr);}}
 
+    .subtle{color:#5B6B7A;font-style:italic;font-size:17px;margin:-4px 0 24px;text-align:left;}
+    @media (min-width:768px){.subtle{text-align:justify;}}
+
 
     /* ===================== */
     /* CARTES */
@@ -134,29 +137,18 @@
     .expertise-card h3{padding:16px 20px 0;margin:0;}
     .expertise-card ul.clean{padding:0 20px 20px;margin-top:8px;}
 
-
-    /* ===================== */
-    /* INTRODUCTION PRESTATIONS */
-    /* ===================== */
-
-    #prestations .subtle{color:var(--muted);font-style:italic;margin:-4px 0 24px;text-align:left;}
-    @media (min-width:768px){#prestations .subtle{text-align:justify;}}
-
     
     /* ===================== */
     /* BIEN PLUS QU'UN AQUARIUM */
     /* ===================== */
     
     #benefices{padding-top:60px;}
-    #benefices .subtle{color:#5B6B7A;font-style:italic;margin:-4px 0 24px;text-align:left;}
     .benefit-card{padding:0;overflow:hidden;}
     .benefit-img{width:100%;height:260px;object-fit:cover;display:block;}
     .benefit-card h3{padding:16px 20px 0;margin:0;}
     .benefit-card p{padding:0 20px 20px;margin:8px 0 0;color:var(--muted);}
     
-    @media (min-width:768px){
-      #benefices .subtle{text-align:justify;}
-      .benefit-card p{text-align:justify;}}
+    @media (min-width:768px){.benefit-card p{text-align:justify;}}
 
     
     /* ===================== */
