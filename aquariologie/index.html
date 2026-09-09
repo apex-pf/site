@@ -1,6 +1,8 @@
+<!-- ============================================ CSS ============================================ -->
+
 <!doctype html>
 <html lang="fr">
-
+  
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -152,6 +154,22 @@
 
     
     /* ===================== */
+    /* PROJETS ADAPTÉS À CHAQUE ESPACE */
+    /* ===================== */
+    
+    #espaces{padding-top:60px;}
+    .space-card{padding:0;overflow:hidden;display:grid;grid-template-columns:42% 58%;min-height:190px;}
+    .space-img{width:100%;height:100%;min-height:190px;object-fit:cover;display:block;}
+    .space-content{padding:20px;}
+    .space-content h3{margin:0 0 8px;}
+    .space-content p{margin:0;color:var(--muted);}
+    
+    @media (min-width:768px){.space-content p{text-align:justify;}}
+    @media (max-width:700px){.space-card{grid-template-columns:1fr;}
+                             .space-img{eight:220px;min-height:0;}}
+
+    
+    /* ===================== */
     /* LISTES */
     /* ===================== */
 
@@ -168,91 +186,25 @@
     /* BANDES */
     /* ===================== */
 
-    .band{
-      background:linear-gradient(
-        180deg,
-        var(--brand-100) 0%,
-        #FFFFFF 100%
-      );
-      border-top:1px solid #EAF0FF;
-      border-bottom:1px solid #EAF0FF;
-    }
-
-    .chip::before{
-      content:"• ";
-      color:var(--brand);
-    }
+    .band{background:linear-gradient(180deg,var(--brand-100) 0%,#FFFFFF 100%);border-top:1px solid #EAF0FF;border-bottom:1px solid #EAF0FF;}
+    .chip::before{content:"• ";color:var(--brand);}
 
 
     /* ===================== */
     /* RÉALISATIONS */
     /* ===================== */
 
-    .ref-grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
-    }
+    .ref-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+    .ref-card{display:flex;flex-direction:column;overflow:hidden;padding:0;}
+    .ref-img{width:100%;height:180px;object-fit:cover;}
+    .ref-content{display:flex;flex-direction:column;padding-bottom:10px;}
+    .ref-logos{display:flex;gap:12px;align-items:center;padding:12px 16px 4px;flex-wrap:wrap;}
+    .ref-logos img{height:26px;width:auto;object-fit:contain;opacity:.9;}
+    .ref-card h3{padding:8px 16px;margin:0;font-size:16px;}
+    .ref-card p{padding:0 16px 10px;margin:0;font-size:14px;color:var(--muted);line-height:1.5;}
 
-    .ref-card{
-      display:flex;
-      flex-direction:column;
-      overflow:hidden;
-      padding:0;
-    }
-
-    .ref-img{
-      width:100%;
-      height:180px;
-      object-fit:cover;
-    }
-
-    .ref-content{
-      display:flex;
-      flex-direction:column;
-      padding-bottom:10px;
-    }
-
-    .ref-logos{
-      display:flex;
-      gap:12px;
-      align-items:center;
-      padding:12px 16px 4px;
-      flex-wrap:wrap;
-    }
-
-    .ref-logos img{
-      height:26px;
-      width:auto;
-      object-fit:contain;
-      opacity:.9;
-    }
-
-    .ref-card h3{
-      padding:8px 16px;
-      margin:0;
-      font-size:16px;
-    }
-
-    .ref-card p{
-      padding:0 16px 10px;
-      margin:0;
-      font-size:14px;
-      color:var(--muted);
-      line-height:1.5;
-    }
-
-    details{
-      padding-bottom:10px;
-    }
-
-    details summary{
-      cursor:pointer;
-      font-size:13px;
-      color:var(--brand);
-      font-weight:600;
-      padding:0 16px;
-    }
+    details{padding-bottom:10px;}
+    details summary{cursor:pointer;font-size:13px;color:var(--brand);font-weight:600;padding:0 16px;}
 
 
     /* ===================== */
@@ -285,6 +237,9 @@
 </head>
 <body id="top">
 
+
+  
+<!-- ============================================ HTML ============================================ -->
   
 <!-- ===================== -->
 <!-- HEADER + HERO -->
@@ -482,9 +437,77 @@
     </article>
 
   </div>
-
 </section>
+
   
+<!-- ===================== -->
+<!-- DES PROJETS ADAPTÉS À CHAQUE ESPACE -->
+<!-- ===================== -->
+
+<section class="container" id="espaces">
+
+  <h2>Des projets adaptés à chaque espace</h2>
+
+  <p class="subtle">
+    Chaque projet est conçu en fonction du lieu, de son usage et de l’ambiance recherchée, afin d’intégrer harmonieusement l’écosystème aquatique à son environnement.
+  </p>
+
+  <div class="grid cols-2">
+
+    <!-- HÔTELS -->
+    <article class="card space-card">
+      <img class="space-img"
+           src="IMAGE-HOTEL"
+           alt="Aquarium intégré dans un hôtel">
+      <div class="space-content">
+        <h3>Hôtels & hébergements</h3>
+        <p>
+          Halls, réceptions, restaurants, espaces communs ou suites : des installations pensées pour enrichir l’expérience des visiteurs et s’intégrer à l’identité du lieu.
+        </p>
+      </div>
+    </article>
+
+    <!-- RESTAURANTS -->
+    <article class="card space-card">
+      <img class="space-img"
+           src="IMAGE-RESTAURANT"
+           alt="Aquarium intégré dans un restaurant">
+      <div class="space-content">
+        <h3>Restaurants & commerces</h3>
+        <p>
+          Des écosystèmes aquatiques conçus comme de véritables éléments d’aménagement pour créer une atmosphère distinctive et valoriser les espaces accueillant du public.
+        </p>
+      </div>
+    </article>
+
+    <!-- ENTREPRISES -->
+    <article class="card space-card">
+      <img class="space-img"
+           src="IMAGE-ENTREPRISE"
+           alt="Aquarium dans un espace professionnel">
+      <div class="space-content">
+        <h3>Entreprises & espaces d’accueil</h3>
+        <p>
+          Bureaux, salles d’attente, espaces de réception ou lieux de rencontre : une présence vivante qui contribue à rendre les espaces plus agréables et accueillants.
+        </p>
+      </div>
+    </article>
+
+    <!-- PARTICULIERS -->
+    <article class="card space-card">
+      <img class="space-img"
+           src="IMAGE-PARTICULIER"
+           alt="Aquarium intégré dans un intérieur privé">
+      <div class="space-content">
+        <h3>Particuliers</h3>
+        <p>
+          Des aquariums et paludariums personnalisés, conçus en fonction de votre intérieur, de vos envies et du temps que vous souhaitez consacrer à leur entretien.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
 
 
 
