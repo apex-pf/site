@@ -97,23 +97,8 @@
     /* LOGO DU HERO */
     /* ===================== */
 
-    .hero-logo-card{
-      background:#FFFFFF;
-      border:1px solid #E8EEF5;
-      border-radius:18px;
-      box-shadow:0 8px 24px rgba(0,0,0,.08);
-      padding:14px;
-      display:flex;
-      align-items:center;
-      min-height:160px;
-      margin:auto;
-    }
-
-    .hero-logo{
-      width:clamp(180px,24vw,320px);
-      height:auto;
-      display:block;
-    }
+    .hero-logo-card{background:#FFFFFF;border:1px solid #E8EEF5;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.08);padding:14px;display:flex;align-items:center;min-height:160px;margin:auto;}
+    .hero-logo{width:clamp(180px,24vw,320px);height:auto;display:block;}
 
 
     /* ===================== */
@@ -128,72 +113,26 @@
     #about{padding-top:60px;}
     #contact{padding-top:60px;}
 
-    h2{
-      color:var(--brand);
-      font-size:clamp(22px,3vw,30px);
-      margin:0 0 18px;
-    }
+    h2{color:var(--brand);font-size:clamp(22px,3vw,30px);margin:0 0 18px;}
 
-    .grid{
-      display:grid;
-      gap:18px;
-    }
+    .grid{display:grid;gap:18px;}
 
     @media(min-width:800px){
-
-      .grid.cols-3{
-        grid-template-columns:repeat(3,1fr);
-      }
-
-      .grid.cols-2{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-    }
+      .grid.cols-3{grid-template-columns:repeat(3,1fr);}
+      .grid.cols-2{grid-template-columns:repeat(2,1fr);}}
 
 
     /* ===================== */
     /* CARTES */
     /* ===================== */
 
-    .card{
-      background:var(--card);
-      border-radius:16px;
-      padding:20px;
-      box-shadow:0 4px 14px rgba(0,0,0,.06);
-      border:1px solid #E8EEF5;
-    }
-
-    .card h3{
-      margin:0 0 6px;
-      font-size:20px;
-    }
-
-    .sector-card{
-      padding:0;
-      overflow:hidden;
-    }
-
-    .sector-img{
-      width:100%;
-      height:140px;
-      object-fit:cover;
-    }
-
-    .expertise-card{
-      padding:0;
-      overflow:hidden;
-    }
-
-    .expertise-card h3{
-      padding:16px 20px 0;
-      margin:0;
-    }
-
-    .expertise-card ul.clean{
-      padding:0 20px 20px;
-      margin-top:8px;
-    }
+    .card{background:var(--card);border-radius:16px;padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.06);border:1px solid #E8EEF5;}
+    .card h3{margin:0 0 6px;font-size:20px;}
+    .sector-card{padding:0;overflow:hidden;}
+    .sector-img{width:100%;height:140px;object-fit:cover;}
+    .expertise-card{padding:0;overflow:hidden;}
+    .expertise-card h3{padding:16px 20px 0;margin:0;}
+    .expertise-card ul.clean{padding:0 20px 20px;margin-top:8px;}
 
 
     /* ===================== */
@@ -216,67 +155,33 @@
     }
 
     
-/* ===================== */
-/* BIEN PLUS QU'UN AQUARIUM */
-/* ===================== */
-
-#benefices{padding-top:60px;}
-#benefices .subtle{color:#5B6B7A;font-style:italic;margin:-4px 0 24px;text-align:left;}
-.benefit-card{padding:0;overflow:hidden;}
-.benefit-img{width:100%;height:200px;object-fit:cover;display:block;}
-.benefit-card h3{padding:16px 20px 0;margin:0;}
-.benefit-card p{padding:0 20px 20px;margin:8px 0 0;color:var(--muted);}
-
-@media (min-width:768px){
-  #benefices .subtle{text-align:justify;}
-  .benefit-card p{text-align:justify;}}
+    /* ===================== */
+    /* BIEN PLUS QU'UN AQUARIUM */
+    /* ===================== */
+    
+    #benefices{padding-top:60px;}
+    #benefices .subtle{color:#5B6B7A;font-style:italic;margin:-4px 0 24px;text-align:left;}
+    .benefit-card{padding:0;overflow:hidden;}
+    .benefit-img{width:100%;height:200px;object-fit:cover;display:block;}
+    .benefit-card h3{padding:16px 20px 0;margin:0;}
+    .benefit-card p{padding:0 20px 20px;margin:8px 0 0;color:var(--muted);}
+    
+    @media (min-width:768px){
+      #benefices .subtle{text-align:justify;}
+      .benefit-card p{text-align:justify;}}
 
     
     /* ===================== */
     /* LISTES */
     /* ===================== */
 
-    ul.clean{
-      list-style:none;
-      padding:0;
-      margin:10px 0 0;
-    }
-
-    ul.clean li{
-      position:relative;
-      padding-left:22px;
-      margin:6px 0;
-      line-height:1.45;
-      color:var(--muted);
-    }
-
-    ul.clean li::before{
-      content:"";
-      width:6px;
-      height:6px;
-      background:var(--muted);
-      border-radius:50%;
-      position:absolute;
-      left:0;
-      top:.50em;
-    }
+    ul.clean{list-style:none;padding:0;margin:10px 0 0;}
+    ul.clean li{position:relative;padding-left:22px;margin:6px 0;line-height:1.45;color:var(--muted);}
+    ul.clean li::before{content:"";width:6px;height:6px;background:var(--muted);border-radius:50%;position:absolute;left:0;top:.50em;}
 
     /* Exception : note */
-
-    ul.clean li.note-ref::before{
-      display:none;
-    }
-
-    ul.clean li.note-ref{
-      padding-left:0;
-      margin-top:16px;
-      font-style:italic;
-      color:var(--ink);
-      font-size:12.5px;
-      line-height:1.3;
-      border-top:1px solid rgba(0,0,0,.08);
-      padding-top:8px;
-    }
+    ul.clean li.note-ref::before{display:none;}
+    ul.clean li.note-ref{padding-left:0;margin-top:16px;font-style:italic;color:var(--ink);font-size:12.5px;line-height:1.3;border-top:1px solid rgba(0,0,0,.08);padding-top:8px;}
 
 
     /* ===================== */
@@ -566,7 +471,7 @@
     <!-- ATMOSPHÈRE -->
     <article class="card benefit-card">
       <img class="benefit-img"
-           src="IMAGE-ATMOSPHERE"
+           src="atmosphere.png"
            alt="Aquarium intégré dans un espace intérieur">
       <h3>Créer une atmosphère</h3>
       <p>
@@ -577,7 +482,7 @@
     <!-- AMÉNAGEMENT -->
     <article class="card benefit-card">
       <img class="benefit-img"
-           src="IMAGE-AMENAGEMENT"
+           src="amenagement.png"
            alt="Aquarium intégré à l'aménagement d'un intérieur">
       <h3>Sublimer un espace</h3>
       <p>
@@ -588,7 +493,7 @@
     <!-- EXPÉRIENCE -->
     <article class="card benefit-card">
       <img class="benefit-img"
-           src="IMAGE-EXPERIENCE"
+           src="experience.png"
            alt="Écosystème aquatique comme élément d'attraction d'un espace">
       <h3>Créer une expérience</h3>
       <p>
