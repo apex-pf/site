@@ -1,143 +1,142 @@
-<!-- ============================================ CSS ============================================ -->
+<!-- ======================================================================================== CSS ======================================================================================== -->
 
 <!doctype html>
 <html lang="fr">
   
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" type="image/png" href="../favicon-light.png">
-  <!-- Thème clair -->
-  <link rel="icon" type="image/png" href="../favicon-dark.png" media="(prefers-color-scheme: light)">
-  <!-- Thème sombre -->
-  <link rel="icon" type="image/png" href="../favicon-light.png" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="../favicon-light.png">
+<!-- Thème clair -->
+<link rel="icon" type="image/png" href="../favicon-dark.png" media="(prefers-color-scheme: light)">
+<!-- Thème sombre -->
+<link rel="icon" type="image/png" href="../favicon-light.png" media="(prefers-color-scheme: dark)">
 
-  <title>APEX | Aquariologie</title>
+<title>APEX | Aquariologie</title>
 
-  <meta name="description" content="APEX — Aquariologie conçoit, installe et entretient des écosystèmes aquatiques sur mesure : aquariums, paludariums, aquascaping et biotopes naturels en Polynésie française.">
+<meta name="description" content="APEX — Aquariologie conçoit, installe et entretient des écosystèmes aquatiques sur mesure : aquariums, paludariums, aquascaping et biotopes naturels en Polynésie française.">
 
-  <meta name="theme-color" content="#2900E5">
+<meta name="theme-color" content="#2900E5">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
     
-    /* ===================== */
-    /* PALETTE APEX */
-    /* ===================== */
+/* ===================== */
+/* PALETTE APEX */
+/* ===================== */
 
-    :root{--brand:#2900E5;--brand-600:#5A48F0;--brand-100:#EEF0FF;--ink:#0F172A;--muted:#5B6B7A;--bg:#FFFFFF;--card:#FFFFFF;}
-    *{box-sizing:border-box;}
-    body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5;}
-    a{color:var(--brand);text-decoration:none;}
-    a:hover{text-decoration:underline;}
-    .container{max-width:1400px;margin:0 auto;padding:0 20px;}
-
-
-    /* ===================== */
-    /* HEADER */
-    /* ===================== */
-
-    header{color:#fff;background:var(--brand);}
-    .nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:18px 0;}
-    .icon{width:20px;height:20px;vertical-align:-3px;margin-right:6px;}
+:root{--brand:#2900E5;--brand-600:#5A48F0;--brand-100:#EEF0FF;--ink:#0F172A;--muted:#5B6B7A;--bg:#FFFFFF;--card:#FFFFFF;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5;}
+a{color:var(--brand);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.container{max-width:1400px;margin:0 auto;padding:0 20px;}
 
 
-    /* ===================== */
-    /* MARQUE */
-    /* ===================== */
+/* ===================== */
+/* HEADER */
+/* ===================== */
 
-    .brand{display:flex;align-items:center;}
-    .brand .mark{display:none;}
-    .brand-link{display:flex;align-items:center;gap:10px;text-decoration:none;}
-    .brand-logo{height:40px;width:auto;display:block;}
-    .brand-text{font-size:clamp(24px,3.2vw,42px);font-weight:800;letter-spacing:.5px;color:#fff;line-height:1;}
-
-    @media (min-width:900px){.brand-logo{height:40px;}}
+header{color:#fff;background:var(--brand);}
+.nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:18px 0;}
+.icon{width:20px;height:20px;vertical-align:-3px;margin-right:6px;}
 
 
-    /* ===================== */
-    /* NAVIGATION */
-    /* ===================== */
+/* ===================== */
+/* MARQUE */
+/* ===================== */
 
-    nav[aria-label="Navigation principale"]{display:flex;gap:16px;margin-right:30px;}
-    nav[aria-label="Navigation principale"] a{color:#fff;}
+.brand{display:flex;align-items:center;}
+.brand .mark{display:none;}
+.brand-link{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.brand-logo{height:40px;width:auto;display:block;}
+.brand-text{font-size:clamp(24px,3.2vw,42px);font-weight:800;letter-spacing:.5px;color:#fff;line-height:1;}
 
-    @media (max-width:768px){.nav{flex-direction:column;gap:12px;}
-
-    nav[aria-label="Navigation principale"]{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-right:0;}}
+@media (min-width:900px){.brand-logo{height:40px;}}
 
 
-    /* ===================== */
-    /* HERO */
-    /* ===================== */
+/* ===================== */
+/* NAVIGATION */
+/* ===================== */
 
-    .hero{padding:34px 0 60px;}
-    .hero-grid{display:grid;gap:22px;align-items:center;}
+nav[aria-label="Navigation principale"]{display:flex;gap:16px;margin-right:30px;}
+nav[aria-label="Navigation principale"] a{color:#fff;}
 
-    @media (min-width:900px){
+@media (max-width:768px){.nav{flex-direction:column;gap:12px;}
 
-    .hero-grid{grid-template-columns:auto 2fr;align-items:center;}}
-    .hero h1{color:#fff;font-size:clamp(26px,3.6vw,42px);line-height:1.15;margin:6px 0 8px;font-weight:800;}
-    .hero-separator{width:100%;max-width:830px;height:2px;background:rgba(255,255,255,.75);margin:28px 0;}
-    .hero-intro{color:#fff;font-size:clamp(15px,1.9vw,18px);line-height:1.5;max-width:830px;margin:14px 0;opacity:.95;font-style:italic;text-align:justify;}
-    .hero p.lead{color:#fff;font-size:clamp(16px,2vw,19px);line-height:1.5;max-width:830px;margin:0 0 14px;opacity:.95;}
+nav[aria-label="Navigation principale"]{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-right:0;}}
+
+
+/* ===================== */
+/* HERO */
+/* ===================== */
+
+.hero{padding:34px 0 60px;}
+.hero-grid{display:grid;gap:22px;align-items:center;}
+
+@media (min-width:900px){
+
+.hero-grid{grid-template-columns:auto 2fr;align-items:center;}}
+.hero h1{color:#fff;font-size:clamp(26px,3.6vw,42px);line-height:1.15;margin:6px 0 8px;font-weight:800;}
+.hero-separator{width:100%;max-width:830px;height:2px;background:rgba(255,255,255,.75);margin:28px 0;}
+.hero-intro{color:#fff;font-size:clamp(15px,1.9vw,18px);line-height:1.5;max-width:830px;margin:14px 0;opacity:.95;font-style:italic;text-align:justify;}
+.hero p.lead{color:#fff;font-size:clamp(16px,2vw,19px);line-height:1.5;max-width:830px;margin:0 0 14px;opacity:.95;}
     
-    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
-    .btn{display:inline-flex;align-items:center;gap:10px;border-radius:12px;padding:12px 18px;font-weight:600;}
-    .btn.primary{background:#fff;color:var(--brand);border:1.5px solid var(--brand);box-shadow:0 10px 24px rgba(0,0,0,.08);}
-    .btn.ghost{border:1.5px solid rgba(255,255,255,.75);color:#fff;}
-    .pill{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;}
-    .pill span{background:rgba(255,255,255,.16);color:#fff;padding:6px 10px;border-radius:999px;font-size:16px;}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:12px;padding:12px 18px;font-weight:600;}
+.btn.primary{background:#fff;color:var(--brand);border:1.5px solid var(--brand);box-shadow:0 10px 24px rgba(0,0,0,.08);}
+.btn.ghost{border:1.5px solid rgba(255,255,255,.75);color:#fff;}
+.pill{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;}
+.pill span{background:rgba(255,255,255,.16);color:#fff;padding:6px 10px;border-radius:999px;font-size:16px;}
 
 
-    /* ===================== */
-    /* LOGO DU HERO */
-    /* ===================== */
+/* ===================== */
+/* LOGO DU HERO */
+/* ===================== */
 
-    .hero-logo-card{background:#FFFFFF;border:1px solid #E8EEF5;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.08);padding:14px;display:flex;align-items:center;min-height:160px;margin:auto;}
-    .hero-logo{width:clamp(180px,24vw,320px);height:auto;display:block;}
+.hero-logo-card{background:#FFFFFF;border:1px solid #E8EEF5;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.08);padding:14px;display:flex;align-items:center;min-height:160px;margin:auto;}
+.hero-logo{width:clamp(180px,24vw,320px);height:auto;display:block;}
 
 
-    /* ===================== */
-    /* SECTIONS */
-    /* ===================== */
+/* ===================== */
+/* SECTIONS */
+/* ===================== */
 
-    section{padding:56px 0}
+section{padding:56px 0}
     
-    #prestations{padding-top:60px;}
-    #realisations{padding-top:60px;}
-    #approche{padding-top:60px;}
-    #about{padding-top:60px;}
-    #contact{padding-top:60px;}
+#prestations{padding-top:60px;}
+#realisations{padding-top:60px;}
+#approche{padding-top:60px;}
+#about{padding-top:60px;}
+#contact{padding-top:60px;}
 
-    h2{color:var(--brand);font-size:clamp(22px,3vw,30px);margin:0 0 18px;}
+h2{color:var(--brand);font-size:clamp(22px,3vw,30px);margin:0 0 18px;}
 
-    .grid{display:grid;gap:18px;}
+.grid{display:grid;gap:18px;}
 
-    @media(min-width:800px){
-      .grid.cols-3{grid-template-columns:repeat(3,1fr);}
-      .grid.cols-2{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:800px){
+  .grid.cols-3{grid-template-columns:repeat(3,1fr);}
+  .grid.cols-2{grid-template-columns:repeat(2,1fr);}}
+  .subtle{color:#0F172A;font-style:italic;font-size:20px;margin:-4px 0 24px;text-align:left;}
+@media (min-width:768px){.subtle{text-align:justify;}}
 
-    .subtle{color:#0F172A;font-style:italic;font-size:20px;margin:-4px 0 24px;text-align:left;}
-    @media (min-width:768px){.subtle{text-align:justify;}}
 
+/* ===================== */
+/* CARTES */
+/* ===================== */
 
-    /* ===================== */
-    /* CARTES */
-    /* ===================== */
-
-    .card{background:var(--card);border-radius:16px;padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.06);border:1px solid #E8EEF5;}
-    .card h3{margin:0 0 6px;font-size:20px;}
-    .sector-card{padding:0;overflow:hidden;}
-    .sector-img{width:100%;height:140px;object-fit:cover;}
-    .expertise-card{padding:0;overflow:hidden;}
-    .expertise-card h3{padding:16px 20px 0;margin:0;}
-    .expertise-card ul.clean{padding:0 20px 20px;margin-top:8px;}
+.card{background:var(--card);border-radius:16px;padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.06);border:1px solid #E8EEF5;}
+.card h3{margin:0 0 6px;font-size:20px;}
+.sector-card{padding:0;overflow:hidden;}
+.sector-img{width:100%;height:140px;object-fit:cover;}
+.expertise-card{padding:0;overflow:hidden;}
+.expertise-card h3{padding:16px 20px 0;margin:0;}
+.expertise-card ul.clean{padding:0 20px 20px;margin-top:8px;}
 
     
 /* ===================== */
@@ -298,7 +297,7 @@ footer{padding:32px 0 48px;color:#5B6B7A;font-size:14px;text-align:left;}
 
 
   
-<!-- ============================================ HTML ============================================ -->
+<!-- ======================================================================================== HTML ======================================================================================== -->
   
 <!-- ===================== -->
 <!-- HEADER + HERO -->
@@ -639,7 +638,7 @@ footer{padding:32px 0 48px;color:#5B6B7A;font-size:14px;text-align:left;}
       <h3>L’aquariologie au service d’écosystèmes durables</h3>
       <p>
         <strong>APEX — Aquariologie</strong> est une activité du
-        <strong><a href="https://apex-pf.github.io/site/" target="_blank" rel="noopener">Cabinet APEX</a></strong>consacrée à la conception, à l’installation et au suivi d’écosystèmes aquatiques sur mesure en Polynésie française.
+        <strong><a href="https://apex-pf.github.io/site/" target="_blank" rel="noopener">Cabinet APEX</a></strong> consacrée à la conception, à l’installation et au suivi d’écosystèmes aquatiques sur mesure en Polynésie française.
       </p>
       <p>
         Fondé par <strong>Dr Tony Manutea Gardon</strong>, docteur en biologie et écologie et formé en aquaculture et aquariologie, APEX associe connaissance du vivant, maîtrise des environnements aquatiques et approche technique pour concevoir des installations à la fois esthétiques, fonctionnelles et adaptées aux besoins des espèces accueillies.
