@@ -227,7 +227,26 @@ a:hover{text-decoration:underline}
     gap:24px;}
 }
 
-    
+
+/* ===================== */
+/* CONTACT */
+/* ===================== */
+
+#contact{padding-top:60px;}
+
+.contact-box{background:var(--brand);border-radius:18px;padding:38px 42px;color:#fff;}
+.contact-content{max-width:850px;}
+.contact-box h2{color:#fff;margin:0 0 12px;}
+.contact-box p{margin:0;color:#fff;font-size:17px;line-height:1.55;opacity:.95;}
+.contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+.btn.contact-primary{background:#fff;color:var(--brand);border:1.5px solid #fff;}
+.btn.contact-secondary{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.75);}
+
+@media (max-width:700px){
+  .contact-box{padding:28px 24px;}
+}
+
+  
 /* ===================== */
 /* LISTES */
 /* ===================== */
@@ -264,16 +283,6 @@ ul.clean li.note-ref{padding-left:0;margin-top:16px;font-style:italic;color:var(
 
 details{padding-bottom:10px;}
 details summary{cursor:pointer;font-size:13px;color:var(--brand);font-weight:600;padding:0 16px;}
-
-
-/* ===================== */
-/* CONTACT */
-/* ===================== */
-
-.contact{display:grid;gap:18px;align-items:center;}
-@media(min-width:860px){
-.contact{grid-template-columns:1fr;}}
-.box{background:#fff;border:1px solid #E8EEF5;border-radius:16px;padding:18px;}
 
     
 /* ===================== */
@@ -665,6 +674,37 @@ footer{padding:32px 0 48px;color:#5B6B7A;font-size:14px;text-align:left;}
 </section>
   
 
+<!-- ===================== -->
+<!-- CONTACT -->
+<!-- ===================== -->
+
+<section class="container contact" id="contact">
+
+  <div class="contact-box">
+
+    <div class="contact-content">
+      <h2>Parlons de votre projet</h2>
+      <p>
+        Vous avez un projet d’aquarium, de paludarium ou d’aménagement aquatique ?
+        Échangeons sur vos envies, votre espace et les possibilités adaptées à votre projet.
+      </p>
+      <div class="contact-actions">
+        <a class="btn contact-primary" href="mailto:tgardon.apex@gmail.com">
+          <img src="../devis.png" alt="" class="icon">
+          Demander une étude
+        </a>
+
+        <a class="btn contact-secondary" href="tel:+68987369491">
+          <img src="../telephone-call.png" alt="" class="icon">
+          (+689) 87&nbsp;36&nbsp;94&nbsp;91
+        </a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+  
 <footer>
   <div class="container">
     <div>&copy; APEX — GARDON Tony Manutea </div>
