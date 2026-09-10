@@ -123,7 +123,7 @@
       .grid.cols-3{grid-template-columns:repeat(3,1fr);}
       .grid.cols-2{grid-template-columns:repeat(2,1fr);}}
 
-    .subtle{color:#2900E5;font-style:italic;font-size:20px;margin:-4px 0 24px;text-align:left;}
+    .subtle{color:#0F172A;font-style:italic;font-size:20px;margin:-4px 0 24px;text-align:left;}
     @media (min-width:768px){.subtle{text-align:justify;}}
 
 
@@ -140,71 +140,101 @@
     .expertise-card ul.clean{padding:0 20px 20px;margin-top:8px;}
 
     
-    /* ===================== */
-    /* BIEN PLUS QU'UN AQUARIUM */
-    /* ===================== */
+/* ===================== */
+/* BIEN PLUS QU'UN AQUARIUM */
+/* ===================== */
     
-    #benefices{padding-top:60px;}
-    .benefit-card{padding:0;overflow:hidden;}
-    .benefit-img{width:100%;height:260px;object-fit:cover;display:block;}
-    .benefit-card h3{padding:16px 20px 0;margin:0;}
-    .benefit-card p{padding:0 20px 20px;margin:8px 0 0;color:var(--muted);}
+#benefices{padding-top:60px;}
+.benefit-card{padding:0;overflow:hidden;}
+.benefit-img{width:100%;height:260px;object-fit:cover;display:block;}
+.benefit-card h3{padding:16px 20px 0;margin:0;}
+.benefit-card p{padding:0 20px 20px;margin:8px 0 0;color:var(--muted);}
     
-    @media (min-width:768px){.benefit-card p{text-align:justify;}}
+@media (min-width:768px){.benefit-card p{text-align:justify;}}
 
     
-    /* ===================== */
-    /* PROJETS ADAPTÉS À CHAQUE ESPACE */
-    /* ===================== */
+/* ===================== */
+/* PROJETS ADAPTÉS À CHAQUE ESPACE */
+/* ===================== */
     
-    #espaces{padding-top:60px;}
-    .space-card{padding:0;overflow:hidden;display:grid;grid-template-columns:42% 58%;min-height:190px;}
-    .space-img{width:100%;height:100%;min-height:190px;object-fit:cover;display:block;}
-    .space-content{padding:20px;}
-    .space-content h3{margin:0 0 8px;}
-    .space-content p{margin:0;color:var(--muted);}
+#espaces{padding-top:60px;}
+.space-card{padding:0;overflow:hidden;display:grid;grid-template-columns:42% 58%;min-height:190px;}
+.space-img{width:100%;height:100%;min-height:190px;object-fit:cover;display:block;}
+.space-content{padding:20px;}
+.space-content h3{margin:0 0 8px;}
+.space-content p{margin:0;color:var(--muted);}
     
-    @media (min-width:768px){.space-content p{text-align:justify;}}
-    @media (max-width:700px){.space-card{grid-template-columns:1fr;}
+@media (min-width:768px){.space-content p{text-align:justify;}}
+@media (max-width:700px){.space-card{grid-template-columns:1fr;}
                              .space-img{eight:220px;min-height:0;}}
 
+
+/* ===================== */
+/* NOTRE APPROCHE */
+/* ===================== */
+
+#approche{padding-top:60px;}
+
+.approach-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:30px;}
+.approach-step{position:relative;padding:0 32px;border-left:1px solid #E8EEF5;}
+.approach-step:first-child{padding-left:0;border-left:none;}
+.approach-step:last-child{padding-right:0;}
     
-    /* ===================== */
-    /* LISTES */
-    /* ===================== */
+.step-number{color:var(--brand);font-size:38px;font-weight:800;line-height:1;margin-bottom:16px;}
+.step-content h3{margin:0 0 8px;font-size:20px;}
+.step-content p{margin:0;color:var(--muted);}
+    
+.turnkey{margin-top:36px;padding:22px 26px;background:var(--brand-100);border-radius:16px;}
+.turnkey h3{color:var(--brand);margin:0 0 6px;font-size:20px;}
+.turnkey p{margin:0;color:var(--muted);}
 
-    ul.clean{list-style:none;padding:0;margin:10px 0 0;}
-    ul.clean li{position:relative;padding-left:22px;margin:6px 0;line-height:1.45;color:var(--muted);}
-    ul.clean li::before{content:"";width:6px;height:6px;background:var(--muted);border-radius:50%;position:absolute;left:0;top:.50em;}
+@media (min-width:768px){.step-content p,.turnkey p{text-align:justify;}}
+@media (max-width:700px){.approach-steps{grid-template-columns:1fr;gap:26px;}
 
-    /* Exception : note */
-    ul.clean li.note-ref::before{display:none;}
-    ul.clean li.note-ref{padding-left:0;margin-top:16px;font-style:italic;color:var(--ink);font-size:12.5px;line-height:1.3;border-top:1px solid rgba(0,0,0,.08);padding-top:8px;}
+.approach-step,
+.approach-step:first-child,
+.approach-step:last-child{padding:0 0 0 20px;border-left:2px solid #E8EEF5;}
+
+.step-number{font-size:32px;margin-bottom:10px;}
+.turnkey{margin-top:30px;}}
+
+    
+/* ===================== */
+/* LISTES */
+/* ===================== */
+
+ul.clean{list-style:none;padding:0;margin:10px 0 0;}
+ul.clean li{position:relative;padding-left:22px;margin:6px 0;line-height:1.45;color:var(--muted);}
+ul.clean li::before{content:"";width:6px;height:6px;background:var(--muted);border-radius:50%;position:absolute;left:0;top:.50em;}
+
+/* Exception : note */
+ul.clean li.note-ref::before{display:none;}
+ul.clean li.note-ref{padding-left:0;margin-top:16px;font-style:italic;color:var(--ink);font-size:12.5px;line-height:1.3;border-top:1px solid rgba(0,0,0,.08);padding-top:8px;}
 
 
-    /* ===================== */
-    /* BANDES */
-    /* ===================== */
+/* ===================== */
+/* BANDES */
+/* ===================== */
 
-    .band{background:linear-gradient(180deg,var(--brand-100) 0%,#FFFFFF 100%);border-top:1px solid #EAF0FF;border-bottom:1px solid #EAF0FF;}
-    .chip::before{content:"• ";color:var(--brand);}
+.band{background:linear-gradient(180deg,var(--brand-100) 0%,#FFFFFF 100%);border-top:1px solid #EAF0FF;border-bottom:1px solid #EAF0FF;}
+.chip::before{content:"• ";color:var(--brand);}
 
 
-    /* ===================== */
-    /* RÉALISATIONS */
-    /* ===================== */
+/* ===================== */
+/* RÉALISATIONS */
+/* ===================== */
 
-    .ref-grid{display:grid;grid-template-columns:1fr;gap:18px;}
-    .ref-card{display:flex;flex-direction:column;overflow:hidden;padding:0;}
-    .ref-img{width:100%;height:180px;object-fit:cover;}
-    .ref-content{display:flex;flex-direction:column;padding-bottom:10px;}
-    .ref-logos{display:flex;gap:12px;align-items:center;padding:12px 16px 4px;flex-wrap:wrap;}
-    .ref-logos img{height:26px;width:auto;object-fit:contain;opacity:.9;}
-    .ref-card h3{padding:8px 16px;margin:0;font-size:16px;}
-    .ref-card p{padding:0 16px 10px;margin:0;font-size:14px;color:var(--muted);line-height:1.5;}
+.ref-grid{display:grid;grid-template-columns:1fr;gap:18px;}
+.ref-card{display:flex;flex-direction:column;overflow:hidden;padding:0;}
+.ref-img{width:100%;height:180px;object-fit:cover;}
+.ref-content{display:flex;flex-direction:column;padding-bottom:10px;}
+.ref-logos{display:flex;gap:12px;align-items:center;padding:12px 16px 4px;flex-wrap:wrap;}
+.ref-logos img{height:26px;width:auto;object-fit:contain;opacity:.9;}
+.ref-card h3{padding:8px 16px;margin:0;font-size:16px;}
+.ref-card p{padding:0 16px 10px;margin:0;font-size:14px;color:var(--muted);line-height:1.5;}
 
-    details{padding-bottom:10px;}
-    details summary{cursor:pointer;font-size:13px;color:var(--brand);font-weight:600;padding:0 16px;}
+details{padding-bottom:10px;}
+details summary{cursor:pointer;font-size:13px;color:var(--brand);font-weight:600;padding:0 16px;}
 
 
     /* ===================== */
@@ -510,6 +540,63 @@
 </section>
 
 
+<!-- ===================== -->
+<!-- NOTRE APPROCHE -->
+<!-- ===================== -->
+
+<section class="container" id="approche">
+
+  <h2>Notre approche</h2>
+
+  <p class="subtle">
+    Chaque projet est développé sur mesure, depuis les premiers échanges jusqu’à la mise en service et au suivi de l’installation. APEX vous accompagne à chaque étape pour créer un écosystème esthétique, fonctionnel et durable.
+  </p>
+
+  <div class="approach-steps">
+
+    <!-- ÉTAPE 1 -->
+    <article class="approach-step">
+      <div class="step-number">01</div>
+      <div class="step-content">
+        <h3>Étude & conception</h3>
+        <p>
+          Échange autour de votre projet, étude de l’espace et définition de l’installation : dimensions, implantation, ambiance recherchée, équipements et espèces adaptées.
+        </p>
+      </div>
+    </article>
+
+    <!-- ÉTAPE 2 -->
+    <article class="approach-step">
+      <div class="step-number">02</div>
+      <div class="step-content">
+        <h3>Installation & mise en service</h3>
+        <p>
+          Installation des équipements, création du décor, mise en eau et démarrage biologique de l’écosystème avant l’introduction progressive des espèces.
+        </p>
+      </div>
+    </article>
+
+    <!-- ÉTAPE 3 -->
+    <article class="approach-step">
+      <div class="step-number">03</div>
+      <div class="step-content">
+        <h3>Entretien & suivi</h3>
+        <p>
+          Une fois l’installation en fonctionnement, APEX peut en assurer l’entretien et le suivi afin de préserver durablement son équilibre, son esthétique et son bon fonctionnement.
+        </p>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="turnkey">
+    <h3>Une solution clé en main</h3>
+    <p>
+      De la conception à l’entretien, APEX peut prendre en charge l’ensemble de votre projet. Vous profitez pleinement de votre installation ; nous veillons à son équilibre et à son bon fonctionnement dans la durée.
+    </p>
+  </div>
+
+</section>
 
 
 
