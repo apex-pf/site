@@ -110,7 +110,6 @@ nav[aria-label="Navigation principale"]{display:flex;flex-wrap:wrap;justify-cont
 section{padding:56px 0}
     
 #prestations{padding-top:60px;}
-#realisations{padding-top:60px;}
 #approche{padding-top:60px;}
 #about{padding-top:60px;}
 #contact{padding-top:60px;}
@@ -165,7 +164,7 @@ h2{color:var(--brand);font-size:clamp(22px,3vw,30px);margin:0 0 18px;}
     
 @media (min-width:768px){.space-content p{text-align:justify;}}
 @media (max-width:700px){.space-card{grid-template-columns:1fr;}
-                             .space-img{eight:220px;min-height:0;}}
+                             .space-img{height:220px;min-height:0;}}
 
 
 /* ===================== */
@@ -210,9 +209,6 @@ h2{color:var(--brand);font-size:clamp(22px,3vw,30px);margin:0 0 18px;}
     
 .about-content h3{margin:0 0 16px;font-size:22px;}
 .about-content p{margin:0 0 14px;color:var(--muted);}
-a{color:var(--brand);text-decoration:none}
-a:hover{text-decoration:underline}
-    
 .about-highlight{background:var(--brand-100);border-radius:16px;overflow:hidden;}
 .about-img{width:100%;height:180px;object-fit:cover;display:block;}
 .about-highlight-content{padding:26px;}
@@ -285,30 +281,12 @@ ul.clean li.note-ref{padding-left:0;margin-top:16px;font-style:italic;color:var(
 .band{background:linear-gradient(180deg,var(--brand-100) 0%,#FFFFFF 100%);border-top:1px solid #EAF0FF;border-bottom:1px solid #EAF0FF;}
 .chip::before{content:"• ";color:var(--brand);}
 
-
-/* ===================== */
-/* RÉALISATIONS */
-/* ===================== */
-
-.ref-grid{display:grid;grid-template-columns:1fr;gap:18px;}
-.ref-card{display:flex;flex-direction:column;overflow:hidden;padding:0;}
-.ref-img{width:100%;height:180px;object-fit:cover;}
-.ref-content{display:flex;flex-direction:column;padding-bottom:10px;}
-.ref-logos{display:flex;gap:12px;align-items:center;padding:12px 16px 4px;flex-wrap:wrap;}
-.ref-logos img{height:26px;width:auto;object-fit:contain;opacity:.9;}
-.ref-card h3{padding:8px 16px;margin:0;font-size:16px;}
-.ref-card p{padding:0 16px 10px;margin:0;font-size:14px;color:var(--muted);line-height:1.5;}
-
-details{padding-bottom:10px;}
-details summary{cursor:pointer;font-size:13px;color:var(--brand);font-weight:600;padding:0 16px;}
-
     
 /* ===================== */
 /* MOBILE */
 /* ===================== */
 
 @media (max-width:700px){
-.ref-img{height:180px;}
 .container{padding-left:20px;padding-right:20px;}}
 
 </style>
@@ -463,7 +441,6 @@ details summary{cursor:pointer;font-size:13px;color:var(--brand);font-weight:600
         </ul>
       </article>
       
-    </div>
     </div>
   </section>
 
@@ -671,7 +648,7 @@ details summary{cursor:pointer;font-size:13px;color:var(--brand);font-weight:600
     <aside class="about-highlight">
       <img class="about-img"
         src="cardinalis.jpg"
-        alt="tetra-paracheirodon-axelrodi">
+        alt="Poissons tropicaux au sein d’un aquarium planté">
       
     <div class="about-highlight-content">
       <span class="about-label">APEX — Aquariologie</span>
@@ -679,6 +656,7 @@ details summary{cursor:pointer;font-size:13px;color:var(--brand);font-weight:600
       <p>
         Un interlocuteur unique vous accompagne de la conception au suivi de votre installation, avec une approche fondée sur l’écoute, la qualité technique et la compréhension des équilibres biologiques.
       </p>
+    </div>
     </aside>
 
   </div>
