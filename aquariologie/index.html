@@ -245,6 +245,25 @@ a:hover{text-decoration:underline}
   .contact-box{padding:28px 24px;}
 }
 
+
+/* ===================== */
+/* FOOTER */
+/* ===================== */
+
+footer{margin-top:56px;background:#0F172A;color:#fff;}
+.footer-content{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:24px;padding-bottom:24px;}
+.footer-brand{display:flex;flex-direction:column;gap:2px;}
+.footer-brand strong{font-size:16px;}
+.footer-brand span{font-size:13px;color:rgba(255,255,255,.7);}
+.footer-links{display:flex;align-items:center;gap:10px;font-size:14px;}
+.footer-links a{color:#fff;}
+.footer-links span{color:rgba(255,255,255,.45);}
+.footer-copy{font-size:13px;color:rgba(255,255,255,.7);text-align:right;}
+
+@media (max-width:700px){
+  .footer-content{flex-direction:column;align-items:flex-start;gap:14px;}
+  .footer-copy{text-align:left;}}
+
   
 /* ===================== */
 /* LISTES */
@@ -282,13 +301,6 @@ ul.clean li.note-ref{padding-left:0;margin-top:16px;font-style:italic;color:var(
 
 details{padding-bottom:10px;}
 details summary{cursor:pointer;font-size:13px;color:var(--brand);font-weight:600;padding:0 16px;}
-
-    
-/* ===================== */
-/* FOOTER */
-/* ===================== */
-
-footer{padding:32px 0 48px;color:#5B6B7A;font-size:14px;text-align:left;}
 
     
 /* ===================== */
@@ -702,11 +714,30 @@ footer{padding:32px 0 48px;color:#5B6B7A;font-size:14px;text-align:left;}
 
 </section>
 
-  
+
+<!-- ===================== -->
+<!-- FOOTER -->
+<!-- ===================== -->
+
 <footer>
-  <div class="container">
-    <div>&copy; APEX — GARDON Tony Manutea </div>
+  <div class="container footer-content">
+
+    <div class="footer-brand">
+      <strong>APEX — Aquariologie</strong>
+      <span>Création d’écosystèmes aquatiques</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="#top">Haut de page</a>
+      <span>•</span>
+      <a href="https://apex-pf.github.io/site/" target="_blank" rel="noopener">Cabinet APEX</a>
+    </div>
+
+    <div class="footer-copy">
+      © 2026 APEX — Tous droits réservés
+    </div>
   </div>
 </footer>
+  
 </body>
 </html>
