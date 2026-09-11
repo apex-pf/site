@@ -94,7 +94,12 @@ nav[aria-label="Navigation principale"]{display:flex;flex-wrap:wrap;justify-cont
 .hero-grid{display:grid;gap:22px;align-items:center;}
 
 @media (min-width:900px){
-.hero-grid{grid-template-columns:auto 2fr;align-items:center;gap:55px;}
+  .hero-grid{
+    grid-template-columns:auto minmax(0, 830px);
+    justify-content:center;
+    align-items:center;
+    gap:60px;
+  }
 }
 .hero h1{color:#fff;font-size:clamp(26px,3.6vw,42px);line-height:1.15;margin:6px 0 8px;font-weight:800;}
 .hero-separator{width:100%;max-width:830px;height:2px;background:rgba(255,255,255,.75);margin:28px 0;}
